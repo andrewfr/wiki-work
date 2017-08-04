@@ -1,0 +1,350 @@
+<!--
+
+  DO NOT SET THIS PAGE FOR TRANSLATION
+
+--><noinclude>{{DISPLAYTITLE:{{ucfirst:{{TNT|date-friday}}}}}}</noinclude><includeonly>
+== {{ucfirst:{{TNT|date-friday-link}}}} ==</includeonly>
+
+{| class="wikitable schedule schedule-main schedule-11"
+|-style="vertical-align: top;"
+! class="time" | {{TNT|name-timeofday}}
+! class="room ballroomwc" | Ballroom West <br/><small>(level 4)</small>
+! class="room ballroome"  | Ballroom Center <br/><small>(level 4)</small>
+! class="room drummondw"  | Drummond West <br/><small>(level 3)</small>
+! class="room drummondc"  | Drummond Center <br/><small>(level 3)</small>
+! class="room drummonde"  | Drummond East <br/><small>(level 3)</small>
+! class="room salon45"    | Salon 3 <br/><small>(level 2)</small>
+! class="room salon6"     | Salon 5 <br/><small>(level 2)</small> 
+! class="room salon7"     | Joyce/Jarry <br/><small>(level A)</small>
+! class="room salon8"     | Salon 1 <br/><small>(level 2)</small>
+! class="room salon9"     | Room 10
+! class="time" | {{TNT|name-timeofday}}
+
+|-style="vertical-align: top;"
+! 08:00
+| class="logistics" colspan="10" rowspan="2" | {{TNT|event-registration}}
+! 08:00
+
+|-style="vertical-align: top;"
+! 08:30
+! 08:30
+
+|-style="vertical-align: top;"
+! 09:00
+| class="keynote" rowspan="2" colspan="10"| {{TNT|event-opening}} <br/> <small>'''Ballroom West + Center (level 4)'''</small>
+! 09:00
+
+|-style="vertical-align: top;"
+! 09:15
+! 09:15
+
+|-style="vertical-align: top;"
+! 09:30
+| class="keynote"   rowspan="4" colspan="10"  | '''[[Keynotes|Jimmy Wales in conversation with Gabriella Coleman]]'''<br/> '''moderated by Evan Prodromou''' <br/> '''''Community and information in a partisan world'''''<br/> <small>'''Ballroom West + Center (level 4)'''</small>
+
+! 09:30
+
+|-style="vertical-align: top;"
+! 09:45
+! 09:45
+
+|-style="vertical-align: top;"
+! 10:00
+! 10:00
+
+|-style="vertical-align: top;"
+! 10:15
+! 10:15
+
+|- style="vertical-align: top;"
+! 10:30
+| class="logistics" colspan="10" | {{TNT|event-break}}
+! 10:30
+
+|- style="vertical-align: top;"
+! Session 1: 11:00-12:30
+| class="header" rowspan="1" | '''s1: Libraries & Education <br/><small>in French, simultaneous translation provided</small> '''
+| class="header" rowspan="1" | '''s2: The future of editing''' 
+| class="header" rowspan="1" | '''s3: Community: Bias and marginalization'''
+| class="header" rowspan="1" | '''s4: Education: Education programs'''
+| class="header" rowspan="1" | '''s5: Why & what we read''' 
+| class="header" rowspan="1" | '''s6: Wikidata: Wikidata & arts'''
+| class="header" rowspan="1" | '''r1: Roundtables 1''' 
+| class="header"     rowspan="1" | '''w1: Workshop 1: Communication'''
+|class ="header" rowspan="1" | Open for breakout sessions 
+|class ="header" rowspan="1" | Open for breakout sessions 
+! Session 1: 11:00-12:30
+
+|- style="vertical-align: top;"
+! 11:00
+| class="presentation" rowspan="2" | [[Submissions/Wikipédia, les bibliothèques publiques et Montréal|Wikipédia, les bibliothèques publiques et Montréal]]
+| class="presentation" rowspan="2" | [[Submissions/Wikitext: upcoming changes, available tools, what you can do.|Wikitext: upcoming changes, available tools, what you can do]]
+| class="presentation" rowspan="2" | [[Submissions/Birth of Bias: implicit bias’ permanence on Wikipedia|Birth of Bias: implicit bias’ permanence on Wikipedia]]
+| class="presentation" rowspan="2" |  [[Submissions/Speaking the Language of the Non-Wikipedians|Speaking the Language of the Non-Wikipedians]]
+| class="presentation" rowspan="2" | [[Submissions/Readership metrics: Trends and stories from our global traffic data|Readership metrics: Trends and stories from our global traffic data]]
+| class="presentation" rowspan="2" | [[Submissions/The (Wiki)Data (R)Evolution|The (Wiki)Data (R)Evolution]]
+| class="presentation" rowspan="3" | [[Submissions/Wikiversities: get over the content, serve the flow|Wikiversities: get over the content, serve the flow]]
+| class="workshop"     rowspan="4" | [[Submissions/How good communication can help you talk to reporters, rule the world, and do other cool stuff: An introductory guide to public relations|How good communication can help you talk to reporters, rule the world, and do other cool stuff: An introductory guide to public relations]]
+|class ="unconference" rowspan="2" |  Breakout sessions
+|class ="unconference" rowspan="2" |  Breakout sessions
+! 11:00
+
+|-style="vertical-align: top;"
+! 11:15
+! 11:15
+
+|- style="vertical-align: top;"
+! 11:30
+| class="presentation" rowspan="2" | [[Submissions/Creating a local digital community. Prototyping a collaborative workshop in libraries|Création d'une communauté numérique locale. Prototypage d'un atelier contributif en bibliothèque]]
+| class="presentation" rowspan="4" | [[Submissions/Editing in the year to come – what the Foundation's Annual Plan means for editing tools|Editing in the year to come – what the Foundation's Annual Plan means for editing tools]]
+| class="presentation" rowspan="4" | [[Submissions/Centering Knowledge From The Margins|Centering Knowledge From The Margins]]
+| class="presentation" rowspan="2" | [[Submissions/How to develop an education program from the scratch|How to develop an education program from the scratch]]
+| class="presentation" rowspan="4" | [[Submissions/Why We Read Wikipedia|Why We Read Wikipedia]]
+| class="presentation" rowspan="2" | [[Submissions/Modelling and Ingesting Performing Arts Related Data into Wikidata|Modelling and Ingesting Performing Arts Related Data into Wikidata]]
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+<!--| class="workshop"     rowspan="2" | {{TNT|event-workshops}}-->
+|class ="unconference" rowspan="2" |  Breakout sessions
+|class ="unconference" rowspan="2" |  Breakout sessions
+! 11:30
+
+|- style="vertical-align: top;"
+! 11:45
+| class="presentation" rowspan="3" | [[Submissions/Building a Better Dispute Resolution System|Building a Better Dispute Resolution System]]
+! 11:45
+
+|- style="vertical-align: top;"
+! 12:00
+| class="presentation" rowspan="2" | [[Submissions/Distinguer les cultures éditoriales pour promouvoir Wikipédia à l’université|Distinguer les cultures éditoriales pour promouvoir Wikipédia à l’université]]
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+| class="presentation" rowspan="2" |  [[Submissions/The Wikipedia Year of Science 2016: What worked, what didn't, and how you can pull off a large-scale content initiative|The Wikipedia Year of Science 2016: What worked, what didn't, and how you can pull off a large-scale content initiative]]
+| class="presentation" rowspan="2" | [[Submissions/The Sum of all paintings is just the start|The Sum of all paintings is just the start]]
+<!--| class="presentation" rowspan="3" | {{TNT|event-presentations}} -->
+| class="workshop"     rowspan="2" | 
+|class ="unconference" rowspan="2" |  Breakout sessions
+|class ="unconference" rowspan="2" |  Breakout sessions
+! 12:00
+
+|- style="vertical-align: top;"
+! 12:15
+! 12:15
+
+|- style="vertical-align: top;"
+! 12:30
+| class="logistics" rowspan="1" colspan="10" | {{TNT|event-lunch}} <br/> level A & B
+
+|- style="vertical-align: top;"
+! 13:00
+| class="logistics" rowspan="2" colspan="10" | Birds of a feather meetups 
+! 13:00
+
+|- style="vertical-align: top;"
+! 13:30
+! 13:30
+
+|-style="vertical-align: top;"
+! class="time" | {{TNT|name-timeofday}}
+! class="room ballroomwc" | Ballroom West <br/><small>(level 4)</small>
+! class="room ballroome"  | Ballroom Center <br/><small>(level 4)</small>
+! class="room drummondw"  | Drummond West <br/><small>(level 3)</small>
+! class="room drummondc"  | Drummond Center <br/><small>(level 3)</small>
+! class="room drummonde"  | Drummond East <br/><small>(level 3)</small>
+! class="room salon45"    | Salon 3 <br/><small>(level 2)</small>
+! class="room salon6"     | Salon 5 <br/><small>(level 2)</small> 
+! class="room salon7"     | Joyce/Jarry <br/><small>(level A)</small>
+! class="room salon8"     | Salon 1 <br/><small>(level 2)</small>
+! class="room salon9"     | Room 10
+! class="time" | {{TNT|name-timeofday}}
+
+
+|- style="vertical-align: top;"
+! Session 2: 14:00-15:30
+| class="header" rowspan="1" | '''s8: Libraries & education (2) <br/> <small>in French, simultaneous translation provided</small> '''
+| class="header" rowspan="1" | '''s7: Collaboration around the globe'''
+| class="header" rowspan="1" | '''s10: Community: Gender gap'''
+| class="header" rowspan="1" | '''s11: GLAM: Collaborations'''
+| class="header" rowspan="1" | '''s12: Legal: Advocacy''' 
+| class="header" rowspan="1" | '''s13: Wikidata: Invoke:Wikidata''' 
+| class="header" rowspan="1" | '''w4: Workshop: Teambuilding'''
+| class="header"     rowspan="1" | '''w3: Workshop: Wikidata'''
+|class ="header" rowspan="1" |  '''r2: Roundtables 2: Community health'''  
+|class ="header" rowspan="1" |  Open for breakout sessions 
+! Session 2: 14:00-15:30
+
+|- style="vertical-align: top;"
+! 14:00
+| class="presentation" rowspan="2" | [[Submissions/Sciences, histoire et projets Wiki, le mariage unique québécois|Sciences, histoire et projets Wiki, le mariage unique québécois]]
+| class="presentation" rowspan="4" | [[Submissions/How to raise awareness for Wikipedia: lessons from Iraq & Nigeria|How to raise awareness for Wikipedia: lessons from Iraq & Nigeria]]
+| class="presentation" rowspan="2" | [[Submissions/Introducing Training Modules - multilingual training on combating harassment|Introducing Training Modules - multilingual training on combating harassment]]
+| class="presentation" rowspan="4" | [[Submissions/The Internet Archive and Wikimedia - Common Knowledge Goals|The Internet Archive and Wikimedia - Common Knowledge Goals]]
+| class="presentation" rowspan="2" | [[Submissions/Legal Advocacy for the Projects and the Movement|Legal Advocacy for the Projects and the Movement]]
+| class="presentation" rowspan="4" | Wikidata & infoboxes panel: [[Submissions/Put data on it: Using Wikidata data in Wikimedia projects|Put data on it: Using Wikidata data in Wikimedia projects]], [[Submissions/Automatic infoboxes with Wikidata|Automatic infoboxes with Wikidata]], [[Submissions/Integrating Wikidata to Infoboxes|Integrating Wikidata to Infoboxes]] 
+| class="workshop" rowspan="4" | [[Submissions/Building your team: a guide to working together|Building your team: a guide to working together]]
+| class="workshop"     rowspan="6" | [[Submissions/A Gentle Introduction to Wikidata for Complete Beginners|A Gentle Introduction to Wikidata for Complete Beginners]]
+| class="presentation" rowspan="3" | [[Submissions/From Mexico City to Montréal: The Code of Conduct and You|From Mexico City to Montréal: The Code of Conduct and You]]
+|class ="unconference" rowspan="2" |  Breakout sessions
+! 14:00
+
+|- style="vertical-align: top;"
+! 14:15
+! 14:15
+
+|- style="vertical-align: top;"
+! 14:30
+| class="presentation" rowspan="2" | [[Submissions/The WikiMOOC, a new way to learn how to edit Wikipedia|The WikiMOOC, a new way to learn how to edit Wikipedia]]
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+| class="presentation" rowspan="4" | [[Submissions/Wiki Loves Women|Wiki Loves Women]]
+<!-- | class="presentation" rowspan="2" | {{TNT|event-presentations}} -->
+| class="presentation" rowspan="4" | [[Submissions/New Wikimedian Order - How to represent Wikimedia's values in international organisations?|New Wikimedian Order - How to represent Wikimedia's values in international organisations?]]
+<!--| class="presentation" rowspan="2" | Wikidata + infoboxes panel-->
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}} -->
+<!--| class="workshop"     rowspan="2" | {{TNT|event-workshops}}-->
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+|class ="unconference" rowspan="2" | Breakout sessions 
+! 14:30
+
+|- style="vertical-align: top;"
+! 14:45
+| class="presentation" rowspan="3" | [[Submissions/How toxic environment affects the community health and which way forward?|How does a toxic environment affect community health, and which way forward?]]
+! 14:45
+
+|- style="vertical-align: top;"
+! 15:00
+| class="presentation" rowspan="2" | [[Submissions/How to create a good school project on Wikipedia|How to create a good school project on Wikipedia]]
+| class="presentation" rowspan="2" | [[Submissions/Wikipedia and other projects in regions under crisis. Iraq as an example.|Wikipedia and other projects in regions under crisis. Iraq as an example]]
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+| class="presentation" rowspan="2" | [[Submissions/Constitutional Court meets Wikipedia|Constitutional Court meets Wikipedia]]
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+| class="presentation" rowspan="2" | [[Submissions/invoke:Wikidata|invoke:Wikidata (discussion)]]
+| class="presentation" rowspan="2" | 
+<!--| class="workshop"     rowspan="2" | {{TNT|event-workshops}}-->
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+|class ="unconference" rowspan="2" | Breakout sessions 
+! 15:00
+
+|- style="vertical-align: top;"
+! 15:15
+! 15:15
+
+|- style="vertical-align: top;"
+! 15:30
+| class="logistics" colspan="10" | {{TNT|event-break}}
+! 15:30
+
+|- style="vertical-align: top;"
+! Session 3: 16:00-17:00
+| class="header" rowspan="1" | '''s14: Research'''
+| class="header" rowspan="1" | '''s15: Education''' 
+| class="header" rowspan="1" | '''s16: Lightning talks 1'''
+| class="header" rowspan="1" | '''s17: Community: Global outreach'''
+| class="header" rowspan="1" | '''s18: Community conferences''' 
+| class="header" rowspan="1" | '''s19: New Voices''' 
+| class="header" rowspan="1" | '''s20: GLAM''' 
+| class="header"     rowspan="1" | '''w5: Workshop: SPARQL'''
+|class ="header" rowspan="1" |  '''w6: Workshop: editing tools''' (French) 
+|class ="header" rowspan="1" |  Open for breakout sessions 
+! Session 3: 16:00-17:00
+
+|- style="vertical-align: top;"
+! 16:00
+| class="presentation" rowspan="4" | [[Submissions/User digest/State of Wikimedia Research 2016-2017|State of Wikimedia Research 2016-2017]]
+| class="presentation" rowspan="2" | [[Submissions/Possible strategies of increasing involvement of scientists and academics in Wikimedia projects|Possible strategies of increasing involvement of scientists and academics in Wikimedia projects]]
+| class="presentation" rowspan="4" | Lightning talks 1
+| class="presentation" rowspan="4" | [[Submissions/Growing a User Group, a roadmap for survival|Growing a User Group, a roadmap for survival]]
+| class="presentation" rowspan="2" | [[Submissions/Hackathon goes Hogwarts: Creating learning environments at tech events|Hackathon goes Hogwarts: Creating learning environments at tech events]]
+| class="presentation" rowspan="4" | [[Submissions/Bringing all the voices to the conversation: what the Wikimedia movement has learned from lower awareness regions|Bringing all the voices to the conversation: what the Wikimedia movement has learned from lower awareness regions]]
+| class="presentation" rowspan="4" | [[Submissions/Other-a-thon: Roundtable on alternative models for public outreach events|Other-a-thon: Roundtable on alternative models for public outreach events]]
+| class="workshop"     rowspan="4" | [[Submissions/SPARQL – a gentle introduction to the Wikidata Query Service|SPARQL – a gentle introduction to the Wikidata Query Service]]
+|class ="workshop" rowspan="4" |  [[Submissions/Utilisation avancée de l'éditeur visuel|Utilisation avancée de l'éditeur visuel]]
+|class ="unconference" rowspan="2" |  Breakout sessions
+! 16:00
+
+|- style="vertical-align: top;"
+! 16:15
+! 16:15
+
+|- style="vertical-align: top;"
+! 16:30
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+| class="presentation" rowspan="2" | [[Submissions/Student Learning Outcomes using Wikipedia based assignments|Student Learning Outcomes using Wikipedia based assignments]]
+<!--| class="presentation" rowspan="2" | Lightning talks 1 -->
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+| class="presentation" rowspan="2" | [[Submissions/Bringing Wikimedia conferences to the next level – Experiences and learnings from three years of organizing|Bringing Wikimedia conferences to the next level – Experiences and learnings from three years of organizing]]
+<!-- | class="presentation" rowspan="2" | -->
+<!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
+<!--| class="workshop"     rowspan="2" | {{TNT|event-workshops}}-->
+<!--|class ="workshop" rowspan="2" |  {{TNT|event-workshops}}-->
+|class ="unconference" rowspan="2" |  Breakout sessions
+! 16:30
+
+|- style="vertical-align: top;"
+! 16:45
+! 16:45
+
+|- style="vertical-align: top;"
+! 17:00
+| class="logistics" colspan="10" | {{TNT|event-break}}
+! 17:00
+
+|- style="vertical-align: top;"
+! 17:15
+| class="keynote" rowspan="3" colspan="10" | '''[[Keynotes|Katherine Maher & Christophe Henner]]''' <br/> '''''Wikimedia 2030''''' <br/> <small>'''Ballroom West + Center (level 4)'''</small>
+! 17:15
+
+|- style="vertical-align: top;"
+! 17:30
+! 17:30
+
+|- style="vertical-align: top;"
+! 17:45
+! 17:45
+
+|- style="vertical-align: top;"
+! 18:00
+| class="posters"  rowspan="3" colspan="10" | Happy hour <br/> '''poster session & community village reception''' <br/>(Level 3 (posters) & 4 (community village)) 
+! 18:00
+
+|-style="vertical-align: top;"
+! 18:30
+! 18:30
+
+|-style="vertical-align: top;"
+! 19:00
+! 19:00
+
+|- style="vertical-align: top;"
+! 19:30
+| class="unconference" rowspan="4" colspan="10"| {{TNT|event-unconference}}
+! 19:30
+
+|-style="vertical-align: top;"
+! 20:00
+! 20:00
+
+|-style="vertical-align: top;"
+! 20:30
+! 20:30
+
+|- style="vertical-align: top;"
+! 21:00<br/>&ndash;<br/>23:00
+! 21:00<br/>&ndash;<br/>23:00
+
+|-style="vertical-align: top;"
+! class="time" | {{TNT|name-timeofday}}
+! class="room ballroomwc" | Ballroom West <br/><small>(level 4)</small>
+! class="room ballroome"  | Ballroom Center <br/><small>(level 4)</small>
+! class="room drummondw"  | Drummond West <br/><small>(level 3)</small>
+! class="room drummondc"  | Drummond Center <br/><small>(level 3)</small>
+! class="room drummonde"  | Drummond East <br/><small>(level 3)</small>
+! class="room salon45"    | Salon 3 <br/><small>(level 2)</small>
+! class="room salon6"     | Salon 5 <br/><small>(level 2)</small> 
+! class="room salon7"     | Joyce/Jarry <br/><small>(level A)</small>
+! class="room salon8"     | Salon 1 <br/><small>(level 2)</small>
+! class="room salon9"     | Room 10
+! class="time" | {{TNT|name-timeofday}}
+
+
+|}
+
+[[Category:Programme]]
+

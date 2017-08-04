@@ -1,0 +1,179 @@
+from dateutil.parser import parse
+import requests
+import pdb
+import json
+import codecs
+import re
+from bs4 import BeautifulSoup
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+time_pattern = re.compile("(\d\d\:\d\d)")
+presentation_pattern = re.compile("\[\[(.*)\]\]")
+level_pattern = re.compile("\((.*)\)")
+session_pattern = re.compile("'''(.*)'''")
+
+def traverse_schedule(schedule):
+    for line in schedule:
+        yield line
+    raise StopIteration()
+
+def get_time(line):
+    answer = time_pattern.search(line)
+    if answer:
+       return answer.group(0)
+    else:
+       return None
+
+def get_sessions(schedule):
+
+    def get_session_dates(line):
+        i = line.find(":")
+        if i != -1:
+            times = line[i + 1:].split("-")
+        return times[0], times[1]
+
+    def get_them_sessions(schedule, session_number):
+        these_sessions = []
+        for line in schedule:
+            n = line.find("Session")
+            if n >= 0:
+                break
+            if line.find('class="header"'):
+                result = session_pattern.search(line)
+                if result:
+                    these_sessions.append(result.group(1))
+        return these_sessions
+
+    gen_schedule = traverse_schedule(schedule)
+    sessions = {}
+    session_number = 1
+
+    for line in gen_schedule:
+        if line.find("Session") != -1:
+            start, finish = get_session_dates(line)
+            the_sessions = get_them_sessions(gen_schedule, session_number)
+            sessions[session_number] = (the_sessions, start, finish)
+            session_number += 1
+
+    return sessions        
+
+def get_presentation(line):
+    if line.find("presentation") == -1:
+        return None
+    answer = presentation_pattern.search(line)
+    if answer:
+        return answer.group(1)
+    else:
+        return None
+
+def get_room(line):
+
+    def get_short_name(line):
+        i = line.find("=")
+        if i != -1:
+            start = line.find('"')
+            finish = line.find('"', start + 1)
+        return line[start + 1:finish]
+
+    def get_long_name(line):
+        i = line.find("|")
+        j = line.find("&lt")
+        if j != -1:
+           room = line[i+1:j-1]
+        else:
+           room = line[i+1:]
+        return room
+
+    def get_level(line):
+        level = level_pattern.search(line)
+        if level:
+            return level.group(1)
+        else:
+            return None
+
+    short_name = get_short_name(line)
+    long_name = get_long_name(line)
+    level = get_level(line)
+    return short_name, long_name, level
+
+def get_url(url):
+    response = requests.get(url)
+    return response.content
+
+def get_file(file_name):
+    lines = None
+    with codecs.open(file_name, encoding="utf-8") as fp:
+        lines = [line for line in fp]
+    return lines
+
+def get_rooms(schedule):
+
+    def get_them(start):
+        rooms = []
+        for i in range(start, len(schedule)):
+            if schedule[i].find('class=\"time\"') != -1:
+                break
+            else:
+                # okay lets process them
+                the_room = get_room(schedule[i].strip())
+                rooms.append(the_room)
+        return rooms
+
+    have_rooms = False
+
+    for i in range(0, len(schedule)):
+        if have_rooms:
+            break
+        j = schedule[i].find('class="time"')
+        if j != -1:
+            rooms = get_them(i+1)
+            have_rooms = True
+
+    return rooms
+
+def get_presentations(schedule):
+        event = {}
+        events = []
+        current_time = None
+        for i in range(0, len(schedule)):
+            time = get_time(schedule[i])
+            if time:
+                current_time = time
+                continue
+
+            presentation = get_presentation(schedule[i])
+            if presentation:
+                events.append((current_time, presentation))
+                continue
+        return events
+
+def get_schedule(html_doc):
+    soup = BeautifulSoup(html_doc,"lxml")
+    schedule = soup.find("textarea")
+    return schedule.get_text().splitlines()
+    
+def add_rooms(information, presentations):
+    i = 0
+    for presentation in presentations:
+        print presentation
+    return
+
+
+def main():
+    html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
+    schedule = get_schedule(html_doc)
+    rooms = get_rooms(schedule)
+    presentations = get_presentations(schedule)
+    sessions = get_sessions(schedule)
+
+    # now lets add the rooms to the presentations
+
+    add_rooms(rooms, presentations)
+
+
+
+if __name__ == "__main__":
+    main()

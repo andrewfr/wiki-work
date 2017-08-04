@@ -1,0 +1,728 @@
+﻿  [
+    {
+      "day" : "Friday",
+      "description" : "This session is intended to take a look back at the history of the Wikimedia movement and outline the different milestones which led to the current organisational status. Its intent is to accompany people entering the organisation today to benefit from institutional memory and understand the state of Wikimedia today.",
+      "facilitator_array" : ["Delphine Ménard"],
+      "facilitators" : "Delphine Ménard",
+      "id" : "10001",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-1",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "9:00",
+      "title" : "40: Orientation for Newcomers to the Wikimedia movement"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Movement Complexity, Celebrating Motivation, Official Opening & Introduction, How I Show Up",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10002",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-1",
+      "space" : "Movement Strategy",
+      "start" : "10:00",
+      "title" : "Start Together (all participants)"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Bon Appétit",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10003",
+      "location" : "Restaurant",
+      "pathways" : "",
+      "scheduleblock" : "friday-lunch",
+      "space" : "",
+      "start" : "12:00",
+      "title" : "Have a good lunch!"
+    },
+    {
+      "day" : "Friday",
+      "description" : "This session is in two half, first half is a presentation by the board of what they do, update on the year priorities and expectations. Second half is a Q&A which will start by the board asking you a question!",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10004",
+      "location" : "",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "",
+      "start" : "12:00",
+      "title" : "50: Ask the Board of Trustees anything"
+    },
+    {
+      "day" : "Friday",
+      "description" : "An introduction to Wikimedia Foundation grants programs, especially focused on new programs launched since 2016: Rapid Grants, Project Grants, Conference Grants, and Simple Annual Plan Grants. Learn which program is the best fit for your projects, where to get more information and who to talk to. There will be time to discuss in small groups and ask specific questions from the respective program officers.",
+      "facilitator_array" : 
+      [
+        "Delphine Menard",
+        "Alex Wang",
+        "Ilario",
+        "Kacie Harold",
+        "Winifred Olliff"
+      ],
+      "facilitators" : "Rapid Grants: Delphine Menard, committee member TBD, grantee TBD Project Grants: Alex Wang, Ilario, grantee TBD Conference Grants: Kacie Harold, committee member TBD, grantee TBD Simple Annual Plan Grants: Winifred Olliff, committee member TBD, grantee TBD",
+      "id" : "10005",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "13:30",
+      "title" : "33: Intro to Wikimedia Foundation Grants"
+    },
+    {
+      "day" : "Friday",
+      "description" : "The hands-on session will focus on learning what strategic processes within the movement can look like and how steps can be taken to create or improve the strategic planning process of an affiliate by working with strategic tools.",
+      "facilitator_array" : 
+      [
+        "Philip Kopetzky",
+        "Mattias Blomgren"
+      ],
+      "facilitators" : "Philip Kopetzky, Mattias Blomgren",
+      "id" : "10006",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "13:30",
+      "title" : "35: Building strategic processes within the movement"
+    },
+    {
+      "day" : "Friday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10007",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "Movement Strategy",
+      "start" : "13:30",
+      "title" : "Analyzing the Present Situation, Personalizing the Present Situation"
+    },
+    {
+      "day" : "Friday",
+      "description" : "The presentation will highlight usual areas in which Wikimedia Foundation teams can work more efficiently with all affiliates. In the following discussion we want to discuss the issues, challenges, expectations and shared understanding that can exist between us when we work together.",
+      "facilitator_array" : ["Global Reach Team"],
+      "facilitators" : "Global Reach Team leads with representatives of other teams from Wikimedia Foundation that partner with affiliates (comms, community engagement, public policy, software development)",
+      "id" : "10008",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "Movement Partnerships",
+      "start" : "14:45",
+      "title" : "15: Wikimedia Foundation + Community Partnerships: Let's work better together!"
+    },
+    {
+      "day" : "Friday",
+      "description" : "This workshop is intended to be the third in a row in the capacity building track, after a session on creating strategies for Wikimedia affiliates and a session on creating annual plans based on organizational strategies. It follows up on similar presentations at previous Wikimedia Conferences and Wikimanias (“Making Ideas into Action”), bringing strategic ideas down to concrete projects. We will share some basic theoretical principles of collaborative project creation and development. We will then offer an activity for participants to apply this knowledge to concrete ideas they bring to the workshop. Participants will work in pairs (or groups of four to five), and fill out a worksheet (possibly a project charter), where they will describe a few initial tasks to complete. The worksheet is intended to be the planning document for this project.",
+      "facilitator_array" : 
+      [
+        "Kacie Harold",
+        "Nikola Kalchev"
+      ],
+      "facilitators" : "Kacie Harold, Nikola Kalchev",
+      "id" : "10009",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "14:45",
+      "title" : "36: Project Creation and Management"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Real-life community events and meetups are organized in more and more Wikimedia communities. But are we all aware of the many different purposes and effects these events have? What about the impact of real-life meetups on the online community? Why do we support real-life events at all? In our session, we give a short input about the various dimensions of Wikimedia community events and their impact. The second part of the session will focus on sharing experiences, ideas, (new) formats and best practices in an open discussion.",
+      "facilitator_array" : 
+      [
+        "Veronika Krämer (WMDE)",
+        "Raimund Liebert (WMAT)",
+        "Natalia Szafran-Kozakowska (WMPL)",
+        "Jon Harald Søby (WMNO)"
+      ],
+      "facilitators" : "Veronika Krämer (WMDE), Raimund Liebert (WMAT), Natalia Szafran-Kozakowska (WMPL), Jon Harald Søby (WMNO)",
+      "id" : "10010",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "14:45",
+      "title" : "37: The 99 dimensions of community events"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Why is awareness of Wikipedia important to our mission? This presentation will show the importance of working to increase awareness of Wikipedia (new readers and editors). The presentation will show different examples, and will be followed by a workshop. We will present problem scenarios and encourage groups of attendees to come up with awareness solutions.",
+      "facilitator_array" : 
+      [
+        "Global Reach Team",
+        "Partnerships group"
+      ],
+      "facilitators" : "Global Reach Team + Affiliates leading \"Partnerships group\"",
+      "id" : "10011",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "friday-session-block-2",
+      "space" : "Movement Partnerships",
+      "start" : "15:30",
+      "title" : "16: Increasing awareness of Wikipedia: How to forge strategic partnerships to achieve this goal?"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Break",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10012",
+      "location" : "Restaurant",
+      "pathways" : "",
+      "scheduleblock" : "friday-lunch",
+      "space" : "",
+      "start" : "15:45",
+      "title" : "Have a break!"
+    },
+    {
+      "day" : "Friday",
+      "description" : "How do you involve as many views as possible from your community? Either if you are creating a new program, planning an event, developing a new online portal or writing a story for the blog, you can involve your community in different parts of the process. By engaging your fellow Wikimedians, you not only make your work more participatory, but you can also generate more engagement once your product is out. In this workshop, we will review the stages of the creative process to identify good opportunities to open your creations to others, how to do it and how to stay on track with your timeline. We will use specific use cases with real-life examples, with a strong focus on communications and programs. We will reflect on the audience each project addresses and how to best find them.",
+      "facilitator_array" : 
+      [
+        "Maria Cruz",
+        "Vassia Atanassova"
+      ],
+      "facilitators" : "Maria Cruz, Vassia Atanassova",
+      "id" : "10013",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "friday-evening",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "16:30",
+      "title" : "30: Collaborative + Participatory Communication: A how-to guide"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Three Executive Directors with 13 years experience between them of working within the Wikimedia movement give their insights into the best (and worst) practices of Human Resource Management in Wikimedia Chapters. Topics that will be discussed: why you should (never) hire Wikipedians, a profile of the ideal first staffer and the ideal Board that hires him/her, how to keep your staff sane, and how to spend money wisely when hiring staff. We will also look briefly at equal opportunities recruitment practices.",
+      "facilitator_array" : 
+      [
+        "Lucy Crompton-Reid (Wikimedia UK)",
+        "Claudia Garád (Wikimedia Österreich)",
+        "Sandra Rientjes (Wikimedia Nederland)"
+      ],
+      "facilitators" : "Lucy Crompton-Reid (Wikimedia UK), Claudia Garád (Wikimedia Österreich) and Sandra Rientjes (Wikimedia Nederland)",
+      "id" : "10014",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "friday-evening",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "16:30",
+      "title" : "43: Fantastic employees and where to find them"
+    },
+    {
+      "day" : "Friday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10015",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "friday-evening",
+      "space" : "Movement Strategy",
+      "start" : "16:30",
+      "title" : "Exploring The Issues & Opportunities"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Wikimedia UK has been running the Wikimedian in Residence programme for several years, and established formal partnership agreements for these projects in 2012. With experience of their benefits and drawbacks, we are now happy to share what we learnt with the movement. The presentation will cover aspects such as: What are the benefits of having an agreement? What are the drawbacks? When might you decide that you don’t need an agreement? What should be included in an agreement? (partnership aspects focus, rather than legal issues) How to collaborate with a partner organisation on creating an agreement, how does it affect the project The workshop part will aim to get participants to create agreement drafts for partnerships they have or will run.",
+      "facilitator_array" : ["Daria Cybulska (WMUK)"],
+      "facilitators" : "Daria Cybulska (WMUK) + co-presenter",
+      "id" : "10016",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "friday-evening",
+      "space" : "Movement Partnerships",
+      "start" : "16:45",
+      "title" : "22: Put a ring on it – benefits of a formal partnership agreement and how to write one"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Every year, thousands of people around the world come together to discover, document, and share our built cultural heritage through Wiki Loves Monuments, the world's largest photo competition. The competition has been held for the past seven years, thanks to the dedication of hundreds of volunteers and staff members of various affiliates, groups of Wikimedians and beyond. In this session, I present what we have achieved together so far and share with you the plans for Wiki Loves Monuments 2017. These plans, which include but are not limited to, Wikidata migration, enriching the built heritage data, and developing tools to improve the organizers workflows, can only materialize by collaborations between Wiki Loves Monuments international team and the local organizers in various countries participating in the contest in 2017 and beyond. Join this session to learn about Wiki Loves Monuments and how you can become a local organizer.",
+      "facilitator_array" : 
+      [
+        "LilyOfTheWest",
+        "Lodewijk",
+        "Romaine"
+      ],
+      "facilitators" : "LilyOfTheWest, Lodewijk, Romaine",
+      "id" : "10017",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "friday-evening",
+      "space" : "Movement Partnerships",
+      "start" : "17:45",
+      "title" : "24: New ambitions for Wiki Loves Monuments: Collaborating to discover, document, and share the world's built heritage"
+    },
+    {
+      "day" : "Friday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10018",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "friday-evening",
+      "space" : "Movement Partnerships",
+      "start" : "17:45",
+      "title" : "25: Sharing talks: Awareness / Usage"
+    },
+    {
+      "day" : "Friday",
+      "description" : "Have you ever wondered how you can contribute to the Wikimedia blog and the big Wikipedia social media accounts? Or perhaps what, exactly, the community news digest is? This session will teach you about our Meta pages, the social media hub on Facebook, and where to send news blurbs about your initiatives and events. Answering several common questions about the Wikimedia Foundation's blog and social media team, like how can you contribute to the Wikimedia blog and the big Wikipedia social media accounts? What is the community news digest? Respectively: through Meta and email, the social media group on Facebook, and short news blurbs from all around the movement.",
+      "facilitator_array" : ["Ed Erhart"],
+      "facilitators" : "Ed Erhart",
+      "id" : "10019",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "friday-evening",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "17:45",
+      "title" : "46: Interacting with the Wikimedia blog and social media accounts"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "Agenda Updating 30min, Participant Led Discussions 1 + 2 60min",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10020",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-1",
+      "space" : "Movement Strategy",
+      "start" : "10:00",
+      "title" : "Start Together (all participants)"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "",
+      "facilitator_array" : ["Together"],
+      "facilitators" : "Together",
+      "id" : "10021",
+      "location" : "Outside",
+      "pathways" : "",
+      "scheduleblock" : "Saturday-session-block-2",
+      "space" : "",
+      "start" : "12:00",
+      "title" : "Let's have a group photo!"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "Bon Appétit",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10022",
+      "location" : "Restaurant",
+      "pathways" : "",
+      "scheduleblock" : "saturday-lunch",
+      "space" : "",
+      "start" : "12:30",
+      "title" : "Have a good lunch!"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "Wikimedians are advocating for copyright reforms (like Freedom of Panorama) and other important public policy changes around the world. It's helpful to share the issues that we are working on, including work from chapters, user groups, the Wikimedia Foundation, and others. Let's discuss accomplishments from 2016, plans for the upcoming year, and opportunities for us to work together more.",
+      "facilitator_array" : 
+      [
+        "Stephen LaPorte",
+        "Dimitar Dimitrov"
+      ],
+      "facilitators" : "Stephen LaPorte, Dimitar Dimitrov",
+      "id" : "10023",
+      "location" : "Hasenheide",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Movement Partnerships",
+      "start" : "14:00",
+      "title" : "23: Global public policy roundtable"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "We present an outline of the cooperation between Wikidata and external organisations in the last year, with lots of magic. John will use his experience as a Wikimedia in Residence at UNESCO as an example for data partnerships. As Wikidata compiles structured knowledge about the world, it needs contributors from all backgrounds, wizards and muggles alike. Adding individual facts to Wikidata is often a simple process but adding the thousands, tens of thousands or even hundreds of thousands of facts in a large dataset manually is not practical. There are some tools and resources available to import data into Wikidata, but it is a complicated process requiring many different skills and steps which are often not well documented, making it something of a dark art. Non technical people can see the value in adding datasets to Wikidata but lack the technical ability to make it happen. This can leave us feeling like muggles and seeing the people able to import data like wizards. Both muggles and wizards need to be able to work together, each contributing their own skills, experience and specialist knowledge in the same way Wikipedia articles are created. To help this to happen we have created a workflow and documentation to make it easier for people to collaborate on importing datasets. The documentation allows the Wikidata community to make decisions together, helping people to learn from previous data imports and progress in their technical skills and turn into wizards.",
+      "facilitator_array" : 
+      [
+        "John Cummings (Wikimedian in Residence at UNESCO)",
+        "Jens Ohlig (WMDE)"
+      ],
+      "facilitators" : "John Cummings (Wikimedian in Residence at UNESCO), Jens Ohlig (WMDE)",
+      "id" : "10024",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "14:00",
+      "title" : "32: Wizards, Muggles and Wikidata: cooperation with external organisations"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "In the past few years, there have been several initiatives that aim to train community members in different skills and topic areas. From program evaluation and design, to communications, board training, conflict management and online harassment, many efforts have emerged in the movement to develop capacities for stronger communities. In the first part of this session, we will share what we have learned from the Leadership Development dialogue sessions held in 2016, as well as introduce new training modules designed to help community members deal with harassment online and at events. Following this overview, we will discuss how we might work together to develop a shared online space, to support peer-to-peer training and mentoring. In this part of the workshop, there will be small group discussion of ideas as well as a larger discussion to set next steps based on emergent ideas and needs.",
+      "facilitator_array" : 
+      [
+        "Jaime Anstee",
+        "Joe Sutherland",
+        "Amanda Bittaker (all WMF)"
+      ],
+      "facilitators" : "Jaime Anstee, Joe Sutherland, Amanda Bittaker (all WMF)",
+      "id" : "10025",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "14:00",
+      "title" : "41: Community leadership development: Where we are now, where we could go."
+    },
+    {
+      "day" : "Saturday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10026",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Movement Strategy",
+      "start" : "14:00",
+      "title" : "Distilling Key Points"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "Many organizations and groups in the movement are already working with partners. Oftentimes, they would like to get more community members or volunteers involved in the partnerships to make it more effective and relevant to our projects. But what to do when you don’t have any community members in your region or you don’t know how to get in contact with any of them? It seems like getting community members and volunteers involved in a partnership is still some kind of holy grail in the movement. In this session, we would like to collect and analyse some of the strategies that participants already use in their organizations and groups to get more people involved. Participants will be encouraged to share their experiences, successes and challenges. Together, maybe we can come up with a collection of lessons learned and good practices for the wider movement to implement. The session will focus on getting Wikimedia community members involved as well as non-Wikimedia affiliated volunteers or even doing a partnership project without volunteers. Any additional perspectives will be welcome!",
+      "facilitator_array" : 
+      [
+        "Julia Kirchner (WMDE)",
+        "Isla Haddow-Flood (WikiAfrica)"
+      ],
+      "facilitators" : "Julia Kirchner (WMDE), Isla Haddow-Flood (WikiAfrica) , ???",
+      "id" : "10027",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Movement Partnerships",
+      "start" : "14:00",
+      "title" : "17: A quest for the holy grail of the Wikimedia movement: Community and volunteer involvement in partnerships"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "The Wikimedia Foundation Communications team uses a variety of messaging, branding, and outreach approaches to raise awareness for the Wikimedia movement, mission, and projects. We do this through media and public relations, strategic messaging, brand management, campaigns, blog and social media, audience development, communications capacity building for global contributors and affiliates, and written and visual products of the Wikimedia Foundation, its departments, executives, the Board of Trustees, and the Wikimedia movement. Partnering with affiliates is a key part of how we collaboratively reach global audiences. Come meet members of the Communications team, learn what we have planned for the next fiscal year, and how we can collaborate and support the work you have planned. We’d love to connect with you!",
+      "facilitator_array" : 
+      [
+        "Gregory Varnum",
+        "Juliet Barbara",
+        "Ed Erhart",
+        "Heather Walls"
+      ],
+      "facilitators" : "Gregory Varnum, Juliet Barbara, Ed Erhart, and Heather Walls",
+      "id" : "10028",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Movement Partnerships",
+      "start" : "15:15",
+      "title" : "19: Working together: Wikimedia Foundation Communications and Wikimedia movement affiliates"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10029",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Movement Partnerships",
+      "start" : "15:15",
+      "title" : "20: Warning signs when your partnership is in trouble and how to deal with it?"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "This will be a short and intensive training course on global policy advocacy on behalf of the Wikimedia movement. The first two-thirds of the session will consist of a discussion of recent developments and key concerns in several global policy areas affecting the Wikimedia movement, including: Copyright Access to knowledge Privacy & government surveillance Censorship Intermediary liability protection The last third of the session will focus on developing practical skills to assist Wikimedia organizations and individual community members in advocating for the Wikimedia movement in the above areas. This may include: Tips for communicating with policymakers Public messaging strategies Ways to coordinate with non-movement partners Strategies for advocacy campaigns and other forms of grassroots organizing",
+      "facilitator_array" : 
+      [
+        "Stephen LaPorte",
+        "James Buatti"
+      ],
+      "facilitators" : "Stephen LaPorte, James Buatti",
+      "id" : "10030",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "saturday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "15:15",
+      "title" : "39: Advocating for free culture"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "Break",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10031",
+      "location" : "Restaurant",
+      "pathways" : "",
+      "scheduleblock" : "saturday-lunch",
+      "space" : "",
+      "start" : "16:15",
+      "title" : "Have a break!"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "Collaborative approaches and partnership building are key in software development for the Wikimedia projects. In this session, Birgit will present best practises around the wishlist approach, user-centered workshops and partnerships with users of other language-projects, other teams or external organisations. Birgit will distill the lessons learned, so you can also apply them to your own projects in other fields.",
+      "facilitator_array" : "Birgit Müller",
+      "facilitators" : "Birgit Müller",
+      "id" : "10032",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "Movement Partnerships",
+      "start" : "17:00",
+      "title" : "18: Bringing collaborative approaches from software development into other partnerships"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "After the European Commission proposed the EU copyright reform at the end of 2016, this year it is the European Parliament’s and the Council’s turn to work on the wordings and improve the text. And while lobbying the European Parliament is something we have built up considerable capacity at and are enjoying the benefits of already existing networks, the Council is a tougher challenge. It is made up of EU Member States’ governments and in order to “speak to the council” we need to talk to the relevant ministries in all the national capitals. For this, we need chapters and user-groups to get actively involved.",
+      "facilitator_array" : ["Dimitar Dimitrov"],
+      "facilitators" : "Dimitar Dimitrov",
+      "id" : "10033",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "17:00",
+      "title" : "31: The Council Strikes Back"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "In 2015-2016, the Wikimedia Foundation conducted a pilot program called Community Capacity Development (CCD). The pilot has concluded and this session would present its results, conclusions drawn from it, and the WMF's plans for continuing the work in coming years, and how you and your community can participate.",
+      "facilitator_array" : ["Asaf Bartov (WMF)"],
+      "facilitators" : "Asaf Bartov (WMF)",
+      "id" : "10034",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "17:00",
+      "title" : "42: Community Capacity Development: Results & Future"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10035",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "Movement Strategy",
+      "start" : "17:00",
+      "title" : "Theme Construction"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "In this workshop, we will approach a communications strategy focusing on the elements of a communications plan: Timeline, channels, audience, smart goals, evaluation, and team. We will walk through the core four elements of a communications plan (timeline, channels, audience, and SMART goals), explaining each one and giving time to participants to work through what that element and means to their group. We will look at creating key messages for some of the events or activities identified; and we will address directionality of communications, thinking what is internal reporting and what is external outreach, and how the two can complement each other. Participants will work in pairs or groups of 4 to 5, applying the notions of the workshop to their own work and building the first draft of their communications strategy.",
+      "facilitator_array" : 
+      [
+        "Greg Varnum",
+        "María Cruz",
+        "Juliet Barbara"
+      ],
+      "facilitators" : "Greg Varnum, María Cruz, Juliet Barbara",
+      "id" : "10036",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "18:15",
+      "title" : "38: Design a Communication Strategy aligned with your organization's goals"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "“A lightning talk is a very short presentation given at a conference or similar forum. Unlike other presentations, lightning talks last only a few minutes and several will usually be delivered in a single period by different speakers.” (Wikipedia).",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10037",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "18:15",
+      "title" : "49: Lightning Talks"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10038",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "Movement Partnerships",
+      "start" : "18:15",
+      "title" : "26: Sharing talks: Advocacy / Outreach"
+    },
+    {
+      "day" : "Saturday",
+      "description" : "Let's party!",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10039",
+      "location" : "Heimathafen Neukölln",
+      "pathways" : "",
+      "scheduleblock" : "saturday-evening",
+      "space" : "",
+      "start" : "19:30",
+      "title" : "Party at Heimathafen Neukölln (incl. pasta dinner)"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "Appointed seats (also known as co-opted seats) can be a great way to diverse a board and bring new expertise to it. On this session, we will talk about the experiences Wikimedia organizations have with how to set the process and to appoint the external members. We will discuss what is the right number of co-opt seats for your board and the challenges – internal and external with them.",
+      "facilitator_array" : 
+      [
+        "Itzik Edri (WMIL, main speaker)",
+        "Michael Maggs (WMUK, panel)",
+        "Nataliia Tymkiv (WMF, panel)"
+      ],
+      "facilitators" : "Itzik Edri (WMIL, main speaker), Michael Maggs (WMUK, panel) and Nataliia Tymkiv (WMF, panel)",
+      "id" : "10040",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-1",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "11:00",
+      "title" : "45: Cooptation in volunteer Wikimedia boards"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "Alternative titles: Help shape the Wikimedia Resource Center In this session, we will overview the Wikimedia Resource Center, a new portal created on Meta Wikimedia that is intended to be a single point of entry for Wikimedians to resources that help them advance their work. We will do a short demo of the WRC, and then proceed to the exercise. To this end, we will share a few techniques in design research, and then distribute roles among participants: user and notetaker. We will ask participants to think of a new activity they want to launch, and to find the resources to do so on the WRC. The notetaker will document the process. After this, participants will switch roles. To close the session, participants will share what they learned in the different roles. To conclude, we will explain how the feedback collected by our note takers will inform the construction of the Wikimedia Resource Center.",
+      "facilitator_array" : ["Maria Cruz"],
+      "facilitators" : "Maria Cruz",
+      "id" : "10041",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-1",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "11:00",
+      "title" : "48: Give feedback on the Wikimedia Resource Center"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10042",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-1",
+      "space" : "Movement Strategy",
+      "start" : "11:00",
+      "title" : "Dot Prioritisation, What Would that MEAN Internally & Externally"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "We start with a short presentation about funding and partnerships and how they interrelate. Based on our experience, we will talk about the value added when organizations are working on grant applications and other type of fundraising activities together. We will also talk about the challenges and pitfalls when you are forming and developing partnerships that involve funding. The presentation will have three parts and each of them will be followed by a set of questions for the audience to discuss or share their experience. Each participant is asked to leave a do/don’t of funding and partnerships in writing.",
+      "facilitator_array" : 
+      [
+        "John Andersson",
+        "Nicola Zeuner"
+      ],
+      "facilitators" : "John Andersson & Nicola Zeuner",
+      "id" : "10043",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-1",
+      "space" : "Movement Partnerships",
+      "start" : "11:00",
+      "title" : "21: Love & Money? How to make it work.\n Or: What is the relation between funding and partnerships?"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "There are 112 affiliates to Wikimedia movement across the world. +60% of them are Users Groups. How to grow theses User Groups in order to have a sustainable Movement? This session aims at sharing the experience of both Brazil and Côte d’Ivoire in order to underline best practices for User Groups and others local affiliates.",
+      "facilitator_array" : 
+      [
+        "Rodrigo Padula (Wiki Educação)",
+        "Samuel Guebo (Wikimedia Community User Group Côte d'Ivoire)",
+        "Kangah Donatien Koffi (Wikimedia Community User Group Côte d'Ivoire)"
+      ],
+      "facilitators" : "Rodrigo Padula (Wiki Educação), Samuel Guebo (Wikimedia Community User Group Côte d'Ivoire), Kangah Donatien Koffi (Wikimedia Community User Group Côte d'Ivoire)",
+      "id" : "10044",
+      "location" : "Körner 1",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "12:15",
+      "title" : "34: How to grow a user group"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "In 2016, the Communications department worked with the rest of the Foundation to revise our branded materials. During this process, we changed our logo to include free fonts, built guidelines and templates for many assets from presentations to badges, and ran workshops to teach staff how to best use our new guidelines. We want to make the materials, and what we learned in the process, available to everyone.",
+      "facilitator_array" : 
+      [
+        "Heather Walls",
+        "Gregory Varnum"
+      ],
+      "facilitators" : "Heather Walls and Gregory Varnum",
+      "id" : "10045",
+      "location" : "Schulenburg",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-2",
+      "space" : "Capacity Building & Learning Track",
+      "start" : "12:15",
+      "title" : "47: Introduction to Wikimedia Foundation brand materials"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10046",
+      "location" : "Britz",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-2",
+      "space" : "Movement Partnerships",
+      "start" : "12:15",
+      "title" : "27: Sharing talks: content /GLAM"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "Bon Appétit",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10047",
+      "location" : "Restaurant",
+      "pathways" : "",
+      "scheduleblock" : "sunday-lunch",
+      "space" : "",
+      "start" : "13:15",
+      "title" : "Have a good lunch!"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "Break",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10048",
+      "location" : "Restaurant",
+      "pathways" : "",
+      "scheduleblock" : "sunday-lunch",
+      "space" : "",
+      "start" : "13:15",
+      "title" : "Have a break!"
+    },
+    {
+      "day" : "Sunday",
+      "description" : "",
+      "facilitator_array" : "",
+      "facilitators" : "",
+      "id" : "10049",
+      "location" : "Kindl 1+2",
+      "pathways" : "",
+      "scheduleblock" : "sunday-session-block-2",
+      "space" : "Movement Strategy",
+      "start" : "14:45",
+      "title" : "End Together (all participants)"
+    }
+  ]
