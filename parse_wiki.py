@@ -10,7 +10,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-time_pattern = re.compile("(\d\d\:\d\d)")
+time_pattern = re.compile("^\! (\d\d\:\d\d)")
 presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
@@ -141,25 +141,6 @@ def get_rooms(schedule):
 
     return rooms
 
-def get_presentations(schedule):
-        event = {}
-        events = []
-        current_time = None
-        for i in range(0, len(schedule)):
-            time = get_time(schedule[i])
-            if time:
-                current_time = time
-                continue
-
-            p = get_presentation(schedule[i])
-            if p:
-                if len(p) == 2:
-                    events.append((current_time, p[0], p[1]))
-                else:
-                    events.append((current_time, p[0]))
-                continue
-        return events
-
 def get_time(line):
     result = time_pattern.search(line)
     if result:
@@ -253,6 +234,9 @@ def get_events(schedule):
 
             # now get the rest of the events
             for line in schedule:
+                if the_time=="16:00":
+                    print line
+                    pdb.set_trace()
                 #if we see the time again, we are done for that block
                 if get_time(line):
                     break
