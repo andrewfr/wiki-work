@@ -14,7 +14,7 @@ time_pattern = re.compile("(\d\d\:\d\d)")
 presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
-event_pattern = re.compile("presentation|unconference|workshop")
+event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
 
 c = {"room ballroomwc" : "Ballroom West", 
         "room ballroome"  : "Ballroom Center", 
@@ -197,6 +197,46 @@ def get_presentations(schedule):
                 continue
         return events
 
+def get_time(line):
+    result = time_pattern.search(line)
+    if result:
+        return result.group(0)
+    else:
+        return None
+
+def get_events(schedule):
+
+    def get_them_events(schedule):
+        line = schedule.next()
+        the_time = get_time(line)
+
+        #if next line is not time, we are not in an event
+        if not the_time:
+            return None
+            
+        line = schedule.next()
+
+        result = event_pattern.search(line)
+        if result:
+            print the_time, result.group(0)
+        else:
+            return None
+
+    events = []
+    current_time = None
+
+    schedule_gen = traverse_schedule(schedule)
+
+    for line in schedule_gen:
+        if line.find("|-") != -1:
+            events = get_them_events(schedule_gen)
+            if not events:
+                continue
+            print events
+                
+
+
+
 def get_schedule(html_doc):
     soup = BeautifulSoup(html_doc,"lxml")
     schedule = soup.find("textarea")
@@ -214,13 +254,14 @@ def add_rooms(information, presentations):
 def main():
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     schedule = get_schedule(html_doc)
-    rooms = get_rooms(schedule)
-    presentations = get_presentations(schedule)
-    sessions = get_sessions(schedule)
+    get_events(schedule)
+    #rooms = get_rooms(schedule)
+    #presentations = get_presentations(schedule)
+    #sessions = get_sessions(schedule)
 
     # now lets add the rooms to the presentations
 
-    add_rooms(rooms, presentations)
+    #add_rooms(rooms, presentations)
 
 
 
