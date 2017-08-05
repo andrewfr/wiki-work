@@ -14,6 +14,18 @@ time_pattern = re.compile("(\d\d\:\d\d)")
 presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
+event_pattern = re.compile("presentation|unconference|workshop")
+
+c = {"room ballroomwc" : "Ballroom West", 
+        "room ballroome"  : "Ballroom Center", 
+        "room drummondw"  : "Drummond West", 
+        "room drummondc"  : "Drummond Center",
+        "room drummonde"  : "Drummond East",
+        "room salon45"    : "Salon 3", 
+        "room salon6"     : "Salon 5",  
+        "room salon7"     : "Joyce/Jarry",
+        "room salon8"     : "Salon 1", 
+        "room salon9"     : "Salon 4" } 
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -61,8 +73,11 @@ def get_sessions(schedule):
     return sessions        
 
 def get_presentation(line):
-    if line.find("presentation") == -1:
+    if line.find("presentation") == -1 and line.find("workshop") == -1 and line.find("unconference") == -1:
         return None
+    #answer = event_pattern.search(line)
+    #if not answer:
+    #    return None
     answer = presentation_pattern.search(line)
     if answer:
         data = answer.group(1).split("|")
@@ -77,7 +92,7 @@ def get_room(line):
         if i != -1:
             start = line.find('"')
             finish = line.find('"', start + 1)
-        return line[start + 1:finish]
+        return c[line[start + 1:finish]]
 
     def get_long_name(line):
         i = line.find("|")
