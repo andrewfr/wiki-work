@@ -264,7 +264,7 @@ def get_details(event_type, line):
 
 def get_events(schedule):
 
-    def get_them_events(schedule):
+    def get_the_event(schedule):
         line = schedule.next()
         the_time = get_time(line)
 
@@ -281,18 +281,18 @@ def get_events(schedule):
         else:
             return None
 
-    events = []
-    current_time = None
+    daily_events = []
 
     schedule_gen = traverse_schedule(schedule)
 
     for line in schedule_gen:
         if line.find("|-") != -1:
-            events = get_them_events(schedule_gen)
+            events = get_the_event(schedule_gen)
             if not events:
                 continue
-            print events
-                
+            daily_events.append(events)
+               
+    return daily_events
 
 
 
@@ -313,7 +313,7 @@ def add_rooms(information, presentations):
 def main():
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     schedule = get_schedule(html_doc)
-    get_events(schedule)
+    print get_events(schedule)
     #rooms = get_rooms(schedule)
     #presentations = get_presentations(schedule)
     #sessions = get_sessions(schedule)
