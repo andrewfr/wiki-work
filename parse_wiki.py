@@ -264,22 +264,34 @@ def get_details(event_type, line):
 
 def get_events(schedule):
 
-    def get_the_event(schedule):
+    def get_the_events(schedule):
+        the_events = []
         line = schedule.next()
         the_time = get_time(line)
 
         #if next line is not time, we are not in an event block
         if not the_time:
-            return None
-            
+            return []
+       
+        # check if this is an event
         line = schedule.next()
-
         result = event_pattern.search(line)
+
         if result:
             details = get_details(result.group(0), line)
-            return (the_time, details)
-        else:
-            return None
+            the_events.append((the_time, details))
+
+            # now get the rest of the events
+            for line in schedule:
+                #if we see the time again, we are done for that block
+                if get_time(line):
+                    break
+                result = event_pattern.search(line)
+                if result:
+                   details = get_details(result.group(0), line)
+                   the_events.append((the_time, details))
+
+        return the_events
 
     daily_events = []
 
@@ -287,10 +299,11 @@ def get_events(schedule):
 
     for line in schedule_gen:
         if line.find("|-") != -1:
-            events = get_the_event(schedule_gen)
-            if not events:
+            events = get_the_events(schedule_gen)
+            if len(events) == 0:
                 continue
-            daily_events.append(events)
+            print events
+            #daily_events.append(events)
                
     return daily_events
 
@@ -313,7 +326,8 @@ def add_rooms(information, presentations):
 def main():
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     schedule = get_schedule(html_doc)
-    print get_events(schedule)
+    for event in get_events(schedule):
+        print event
     #rooms = get_rooms(schedule)
     #presentations = get_presentations(schedule)
     #sessions = get_sessions(schedule)
