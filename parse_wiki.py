@@ -234,7 +234,7 @@ def get_events(schedule):
 
             # now get the rest of the events
             for line in schedule:
-                if the_time=="16:00":
+                if the_time=="15:00":
                     print line
                     pdb.set_trace()
                 #if we see the time again, we are done for that block
