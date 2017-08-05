@@ -218,8 +218,15 @@ def get_details(event_type, line):
         else:
             return None
 
-    def get_key_note_details(line):
-        return
+    def get_keynote_details(line):
+        detail = None
+        i = line.find("|", 1)
+        if i != -1:
+            detail = line[i + 1:]
+            detail = detail.replace("<br/>","")
+            detail = detail.replace("<small>","")
+            detail = detail.replace("</small>","")
+        return detail
 
     def get_logistics_details(line):
         global logistics_pattern
@@ -248,7 +255,7 @@ def get_details(event_type, line):
     elif event_type == "logistics":
         details = get_logistics_details(line)
     elif event_type == "keynote":
-        print "-keynote"
+        details = get_keynote_details(line)
     elif event_type == "posters":
         print "posters"
     elif event_type == "unconference":
