@@ -302,8 +302,7 @@ def get_events(schedule):
             events = get_the_events(schedule_gen)
             if len(events) == 0:
                 continue
-            print events
-            #daily_events.append(events)
+            daily_events = daily_events + events
                
     return daily_events
 
