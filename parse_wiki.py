@@ -232,8 +232,16 @@ def get_details(event_type, line):
     def get_poster(line):
         return
 
-    def get_unconference(line):
-        return
+    def get_unconference_details(line):
+        #check for break out
+        if line.find("Breakout sessions"):
+            return "Breakout sessions"
+        details = get_presentation_details(line)
+        if details:
+            return details
+        details = get_logistics_details(line)
+        if details:
+            return details
 
     if event_type == "presentation":
         details = get_presentation_details(line)
@@ -244,7 +252,7 @@ def get_details(event_type, line):
     elif event_type == "posters":
         print "posters"
     elif event_type == "unconference":
-        print "unconference"
+        details = get_unconference_details(line)
     return event_type, details
 
 def get_events(schedule):
