@@ -14,8 +14,8 @@ time_pattern = re.compile("(\d\d\:\d\d)")
 presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
-event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
-event_pattern = re.compile('class="(presentation|unconference|workshop|keynote|posters|logistics)"')
+#event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
+event_pattern = re.compile('^\| class="(presentation|unconference|workshop|keynote|posters|logistics)"')
 logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
 
 c = {"room ballroomwc" : "Ballroom West", 
@@ -227,7 +227,8 @@ def get_details(event_type, line):
         details = get_unconference_details(line)
     elif event_type == "workshop":
         details = get_workshop_details(line)
-        #print "->workshop", details
+    else:
+        details = "I don't know"
 
     return event_type, details
 
@@ -247,7 +248,6 @@ def get_events(schedule):
         result = event_pattern.search(line)
 
         if result:
-            print "->", result.group(1), "<-"
             details = get_details(result.group(1), line)
             the_events.append((the_time, details))
 
