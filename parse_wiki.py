@@ -65,7 +65,8 @@ def get_presentation(line):
         return None
     answer = presentation_pattern.search(line)
     if answer:
-        return answer.group(1)
+        data = answer.group(1).split("|")
+        return data
     else:
         return None
 
@@ -109,6 +110,7 @@ def get_file(file_name):
         lines = [line for line in fp]
     return lines
 
+"""
 def get_rooms(schedule):
 
     def get_them(start):
@@ -133,6 +135,33 @@ def get_rooms(schedule):
             have_rooms = True
 
     return rooms
+"""
+
+def get_rooms(schedule):
+
+    def get_them(schedule):
+        rooms = []
+        for line in schedule:
+            if line.find('class=\"time\"') != -1:
+                break
+            else:
+                # okay lets process them
+                the_room = get_room(line.strip())
+                rooms.append(the_room)
+        return rooms
+
+    have_rooms = False
+    gen_schedule = traverse_schedule(schedule)
+
+    for line in gen_schedule:
+        if have_rooms:
+            break
+        j = line.find('class="time"')
+        if j != -1:
+            rooms = get_them(gen_schedule)
+            have_rooms = True
+
+    return rooms
 
 def get_presentations(schedule):
         event = {}
@@ -144,9 +173,12 @@ def get_presentations(schedule):
                 current_time = time
                 continue
 
-            presentation = get_presentation(schedule[i])
-            if presentation:
-                events.append((current_time, presentation))
+            p = get_presentation(schedule[i])
+            if p:
+                if len(p) == 2:
+                    events.append((current_time, p[0], p[1]))
+                else:
+                    events.append((current_time, p[0]))
                 continue
         return events
 
@@ -157,8 +189,10 @@ def get_schedule(html_doc):
     
 def add_rooms(information, presentations):
     i = 0
+    modulus = len(information)
     for presentation in presentations:
-        print presentation
+        print "->", presentation, information[i % modulus]
+        i = i + 1
     return
 
 
