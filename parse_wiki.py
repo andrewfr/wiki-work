@@ -236,8 +236,8 @@ def get_details(event_type, line):
         else:
             return None
 
-    def get_poster(line):
-        return
+    def get_poster_details(line):
+        return get_keynote_details(line)
 
     def get_unconference_details(line):
         #check for break out
@@ -257,7 +257,7 @@ def get_details(event_type, line):
     elif event_type == "keynote":
         details = get_keynote_details(line)
     elif event_type == "posters":
-        print "posters"
+        details = get_poster_details(line)
     elif event_type == "unconference":
         details = get_unconference_details(line)
     return event_type, details
