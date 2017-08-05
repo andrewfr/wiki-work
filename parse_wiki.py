@@ -15,6 +15,7 @@ presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
 event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
+logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
 
 c = {"room ballroomwc" : "Ballroom West", 
         "room ballroome"  : "Ballroom Center", 
@@ -204,13 +205,55 @@ def get_time(line):
     else:
         return None
 
+
+def get_details(event_type, line):
+
+    details = None
+
+    def get_presentation_details(line):
+        answer = presentation_pattern.search(line)
+        if answer:
+            data = answer.group(1).split("|")
+            return data
+        else:
+            return None
+
+    def get_key_note_details(line):
+        return
+
+    def get_logistics_details(line):
+        global logistics_pattern
+        answer = logistics_pattern.search(line)
+        if answer:
+            return answer.group(1)
+        else:
+            return None
+
+    def get_poster(line):
+        return
+
+    def get_unconference(line):
+        return
+
+    if event_type == "presentation":
+        details = get_presentation_details(line)
+    elif event_type == "logistics":
+        details = get_logistics_details(line)
+    elif event_type == "keynote":
+        print "-keynote"
+    elif event_type == "posters":
+        print "posters"
+    elif event_type == "unconference":
+        print "unconference"
+    return event_type, details
+
 def get_events(schedule):
 
     def get_them_events(schedule):
         line = schedule.next()
         the_time = get_time(line)
 
-        #if next line is not time, we are not in an event
+        #if next line is not time, we are not in an event block
         if not the_time:
             return None
             
@@ -218,7 +261,8 @@ def get_events(schedule):
 
         result = event_pattern.search(line)
         if result:
-            print the_time, result.group(0)
+            details = get_details(result.group(0), line)
+            return (the_time, details)
         else:
             return None
 
