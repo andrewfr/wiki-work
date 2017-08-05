@@ -15,6 +15,7 @@ presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
 event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
+event_pattern = re.compile('class="(presentation|unconference|workshop|keynote|posters|logistics)"')
 logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
 
 c = {"room ballroomwc" : "Ballroom West", 
@@ -73,18 +74,6 @@ def get_sessions(schedule):
 
     return sessions        
 
-def get_presentation(line):
-    if line.find("presentation") == -1 and line.find("workshop") == -1 and line.find("unconference") == -1:
-        return None
-    #answer = event_pattern.search(line)
-    #if not answer:
-    #    return None
-    answer = presentation_pattern.search(line)
-    if answer:
-        data = answer.group(1).split("|")
-        return data
-    else:
-        return None
 
 def get_room(line):
 
@@ -125,33 +114,6 @@ def get_file(file_name):
     with codecs.open(file_name, encoding="utf-8") as fp:
         lines = [line for line in fp]
     return lines
-
-"""
-def get_rooms(schedule):
-
-    def get_them(start):
-        rooms = []
-        for i in range(start, len(schedule)):
-            if schedule[i].find('class=\"time\"') != -1:
-                break
-            else:
-                # okay lets process them
-                the_room = get_room(schedule[i].strip())
-                rooms.append(the_room)
-        return rooms
-
-    have_rooms = False
-
-    for i in range(0, len(schedule)):
-        if have_rooms:
-            break
-        j = schedule[i].find('class="time"')
-        if j != -1:
-            rooms = get_them(i+1)
-            have_rooms = True
-
-    return rooms
-"""
 
 def get_rooms(schedule):
 
@@ -250,6 +212,9 @@ def get_details(event_type, line):
         if details:
             return details
 
+    def get_workshop_details(line):
+        return get_presentation_details(line)
+
     if event_type == "presentation":
         details = get_presentation_details(line)
     elif event_type == "logistics":
@@ -260,6 +225,10 @@ def get_details(event_type, line):
         details = get_poster_details(line)
     elif event_type == "unconference":
         details = get_unconference_details(line)
+    elif event_type == "workshop":
+        details = get_workshop_details(line)
+        #print "->workshop", details
+
     return event_type, details
 
 def get_events(schedule):
@@ -278,7 +247,8 @@ def get_events(schedule):
         result = event_pattern.search(line)
 
         if result:
-            details = get_details(result.group(0), line)
+            print "->", result.group(1), "<-"
+            details = get_details(result.group(1), line)
             the_events.append((the_time, details))
 
             # now get the rest of the events
@@ -288,7 +258,7 @@ def get_events(schedule):
                     break
                 result = event_pattern.search(line)
                 if result:
-                   details = get_details(result.group(0), line)
+                   details = get_details(result.group(1), line)
                    the_events.append((the_time, details))
 
         return the_events
@@ -305,7 +275,6 @@ def get_events(schedule):
             daily_events = daily_events + events
                
     return daily_events
-
 
 
 def get_schedule(html_doc):
@@ -325,6 +294,7 @@ def add_rooms(information, presentations):
 def main():
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     schedule = get_schedule(html_doc)
+    get_events(schedule)
     for event in get_events(schedule):
         print event
     #rooms = get_rooms(schedule)
