@@ -15,7 +15,7 @@ presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
 #event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
-event_pattern = re.compile('^\| class="(presentation|unconference|workshop|keynote|posters|logistics)"')
+event_pattern = re.compile('^\|\s*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"')
 logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
 
 c = {"room ballroomwc" : "Ballroom West", 
@@ -37,7 +37,7 @@ def traverse_schedule(schedule):
 def get_time(line):
     answer = time_pattern.search(line)
     if answer:
-       return answer.group(0)
+       return answer.group(1)
     else:
        return None
 
@@ -144,10 +144,9 @@ def get_rooms(schedule):
 def get_time(line):
     result = time_pattern.search(line)
     if result:
-        return result.group(0)
+        return result.group(1)
     else:
         return None
-
 
 def get_details(event_type, line):
 
@@ -184,7 +183,7 @@ def get_details(event_type, line):
 
     def get_unconference_details(line):
         #check for break out
-        if line.find("Breakout sessions"):
+        if line.find("Breakout sessions") >= 0:
             return "Breakout sessions"
         details = get_presentation_details(line)
         if details:
@@ -234,9 +233,7 @@ def get_events(schedule):
 
             # now get the rest of the events
             for line in schedule:
-                if the_time=="15:00":
-                    print line
-                    pdb.set_trace()
+                t = get_time(line)
                 #if we see the time again, we are done for that block
                 if get_time(line):
                     break
@@ -278,7 +275,7 @@ def add_rooms(information, presentations):
 def main():
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     schedule = get_schedule(html_doc)
-    get_events(schedule)
+    #get_events(schedule)
     for event in get_events(schedule):
         print event
     #rooms = get_rooms(schedule)
