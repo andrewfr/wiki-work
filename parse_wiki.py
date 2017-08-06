@@ -175,6 +175,9 @@ def get_details(event_type, line):
         answer = logistics_pattern.search(line)
         if answer:
             return answer.group(1)
+        answer = get_presentation_details(line)
+        if answer:
+           return answer
         else:
             return None
 
