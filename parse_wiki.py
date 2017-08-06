@@ -17,6 +17,7 @@ session_pattern = re.compile("'''(.*)'''")
 #event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
 event_pattern = re.compile('^\|\s*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"')
 logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
+comment_pattern = re.compile('^\<\!\-\-(.*)\-\-\>')
 
 c = {"room ballroomwc" : "Ballroom West", 
         "room ballroome"  : "Ballroom Center", 
@@ -227,8 +228,15 @@ def get_events(schedule):
             return []
        
         # check if this is an event
-        line = schedule.next()
-        result = event_pattern.search(line)
+        while True:
+            line = schedule.next()
+            result = event_pattern.search(line)
+            if result:
+                break
+            result = comment_pattern.search(line)
+            if result:
+                continue
+            break
 
         if result:
             details = get_details(result.group(1), line)
