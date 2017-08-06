@@ -197,7 +197,13 @@ def get_details(event_type, line):
             return details
 
     def get_workshop_details(line):
-        return get_presentation_details(line)
+        answer = get_presentation_details(line)
+        if answer:
+            return answer
+        answer = get_logistics_details(line)
+        if answer:
+            return answer
+        return None
 
     if event_type == "presentation":
         details = get_presentation_details(line)
@@ -284,7 +290,8 @@ def add_rooms(information, presentations):
 
 
 def main():
-    html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
+    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
+    html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
     schedule = get_schedule(html_doc)
     #get_events(schedule)
     for event in get_events(schedule):
