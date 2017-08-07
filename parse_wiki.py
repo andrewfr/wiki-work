@@ -188,7 +188,6 @@ def get_details(event_type, line):
 
     def get_unconference_details(line):
         #check for break out
-        print "->", line
         #answer = breakout_pattern.search(line)
         #if answer:
         #    return answer.group(0)
@@ -298,13 +297,25 @@ def add_rooms(information, presentations):
     return
 
 
+def get_link(prefix, event):
+    link = event[1][1][1]
+    link = link.replace(" ","_")
+    print prefix + link
+
+
 def main():
     #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
     schedule = get_schedule(html_doc)
     #get_events(schedule)
+    prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
     for event in get_events(schedule):
-        print event
+        try:
+            if event[1][0] == "presentation":
+                get_link(prefix, event)
+            #print event[1][1][0]
+        except:
+            pass
     #rooms = get_rooms(schedule)
     #presentations = get_presentations(schedule)
     #sessions = get_sessions(schedule)
