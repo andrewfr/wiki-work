@@ -1,18 +1,39 @@
 from bs4 import BeautifulSoup
+import requests
 import codecs
+import sys
 
-def extract_information(submission):
+from parse_submission import parse_submission
+
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
+def get_submission_wikicode_link(url_prefix, submission):
     soup = BeautifulSoup(submission,"lxml")
-    print soup
-    l = soup.find_all("span")
-    print l
+    link = soup.find(text="Edit source")
+    if link:
+        link = url_prefix + link.parent["href"]
+    return link
 
-    # look for the link
+
+def get_submission_wikicode(html_doc):
+    soup = BeautifulSoup(html_doc,"lxml")
+    submission = soup.find("textarea")
+    if submission:
+        wikicode = submission.get_text()
+    else:
+        wikicode = None
+    return wikicode
 
 def main():
-    with codecs.open("sample.html", encoding="utf-8") as fp:
-        html_doc = fp.read()
-    extract_information(html_doc)
+    result = requests.get("https://wikimania2017.wikimedia.org/w/index.php?title=Submissions/Wikitext:_upcoming_changes,_available_tools,_what_you_can_do.&action=edit")
+    prefix = "https://wikimania2017.wikimedia.org"
+    wikicode_link = get_submission_wikicode_link(prefix, result.text)
+    print wikicode_link
+    result = requests.get(wikicode_link)
+    wikicode = get_submission_wikicode(result.text)
+    print parse_submission(wikicode)   
+    
 
 
 if __name__ == "__main__":
