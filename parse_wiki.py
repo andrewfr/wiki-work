@@ -298,8 +298,6 @@ def add_rooms(information, presentations):
         i = i + 1
     return
 
-
-
 def get_submissions_data(url_prefix, events):
     for event in events:
         try:
@@ -319,7 +317,6 @@ def get_submission(url):
     else:
         print "PROBLEM:", result.status_code, url
     return text
-
 
 def get_link(prefix, event):
     link = event[1][1][1]
