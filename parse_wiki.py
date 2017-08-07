@@ -303,7 +303,8 @@ def get_submissions_data(url_prefix, events):
         try:
             if event[1][0] == "presentation":
                 url = get_link(url_prefix, event)
-                get_submission(url)
+                print url
+                #get_submission(url)
             #print event[1][1][0]
         except:
             print "problem with", event
@@ -330,6 +331,7 @@ def main():
     events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
     get_submissions_data(prefix, events)
+    #get_submissions_data(prefix, events)
     #rooms = get_rooms(schedule)
     #presentations = get_presentations(schedule)
     #sessions = get_sessions(schedule)

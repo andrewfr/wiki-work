@@ -4,10 +4,10 @@ import codecs
 def extract_information(submission):
     soup = BeautifulSoup(submission,"lxml")
     print soup
-    #title = soup.find(text="Title of the submission")
-    #faciliators = soup.find(text="Author of the submission")
-    description = soup.find(text="Abstract")
-    print description
+    l = soup.find_all("span")
+    print l
+
+    # look for the link
 
 def main():
     with codecs.open("sample.html", encoding="utf-8") as fp:
