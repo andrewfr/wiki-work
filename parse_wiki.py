@@ -1,3 +1,4 @@
+import traceback
 from urllib import quote
 from dateutil.parser import parse
 import requests
@@ -298,25 +299,29 @@ def add_rooms(information, presentations):
     return
 
 
+
+def get_submissions_data(url_prefix, events):
+    for event in events:
+        try:
+            if event[1][0] == "presentation":
+                url = get_link(url_prefix, event)
+            #print event[1][1][0]
+        except:
+            print "problem with", event
+            traceback.print_exc()
+
 def get_link(prefix, event):
     link = event[1][1][1]
     link = link.replace(" ","_")
     return prefix + quote(link)
 
-
 def main():
     #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
     schedule = get_schedule(html_doc)
-    #get_events(schedule)
+    events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
-    for event in get_events(schedule):
-        try:
-            if event[1][0] == "presentation":
-                print get_link(prefix, event)
-            #print event[1][1][0]
-        except:
-            pass
+    get_submissions_data(prefix, events)
     #rooms = get_rooms(schedule)
     #presentations = get_presentations(schedule)
     #sessions = get_sessions(schedule)
