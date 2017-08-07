@@ -1,3 +1,4 @@
+from urllib import quote
 from dateutil.parser import parse
 import requests
 import pdb
@@ -300,7 +301,7 @@ def add_rooms(information, presentations):
 def get_link(prefix, event):
     link = event[1][1][1]
     link = link.replace(" ","_")
-    print prefix + link
+    return prefix + quote(link)
 
 
 def main():
@@ -312,7 +313,7 @@ def main():
     for event in get_events(schedule):
         try:
             if event[1][0] == "presentation":
-                get_link(prefix, event)
+                print get_link(prefix, event)
             #print event[1][1][0]
         except:
             pass
