@@ -18,6 +18,7 @@ session_pattern = re.compile("'''(.*)'''")
 event_pattern = re.compile('^\|\s*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"')
 logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
 comment_pattern = re.compile('^\<\!\-\-(.*)\-\-\>')
+breakout_pattern = re.compile("(\w*)([Bb]reakout)(\w*)")
 
 c = {"room ballroomwc" : "Ballroom West", 
         "room ballroome"  : "Ballroom Center", 
@@ -187,14 +188,20 @@ def get_details(event_type, line):
 
     def get_unconference_details(line):
         #check for break out
-        if line.find("Breakout sessions") >= 0:
-            return "Breakout sessions"
+        print "->", line
+        #answer = breakout_pattern.search(line)
+        #if answer:
+        #    return answer.group(0)
         details = get_presentation_details(line)
         if details:
             return details
         details = get_logistics_details(line)
         if details:
             return details
+        else:
+            i = line.find("|",5)
+            if i != -1:
+                return line[i + 1:].strip()
 
     def get_workshop_details(line):
         answer = get_presentation_details(line)
@@ -251,6 +258,8 @@ def get_events(schedule):
             # now get the rest of the events
             for line in schedule:
                 t = get_time(line)
+                if t == "16:00":
+                    pass
                 #if we see the time again, we are done for that block
                 if get_time(line):
                     break
