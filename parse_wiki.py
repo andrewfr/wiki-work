@@ -305,10 +305,21 @@ def get_submissions_data(url_prefix, events):
         try:
             if event[1][0] == "presentation":
                 url = get_link(url_prefix, event)
+                get_submission(url)
             #print event[1][1][0]
         except:
             print "problem with", event
             traceback.print_exc()
+
+def get_submission(url):
+    text = None
+    result = requests.get(url)
+    if result >= 200 and result.status_code < 300:
+        text = result.text
+    else:
+        print "PROBLEM:", result.status_code, url
+    return text
+
 
 def get_link(prefix, event):
     link = event[1][1][1]
