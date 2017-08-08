@@ -11,11 +11,18 @@ author_pattern = re.compile("\s*;\s*Author")
 abstract_pattern = re.compile("\s*;\s*Abstract")
 start_pattern = re.compile("^\s*;")
 
+def replace_comment(line):
+    start = line.find("<!--")
+    if start != -1:
+        finish = line.find("-->")
+        if finish != -1:
+            line = line[0:start] + line[finish:]
+    return line
+
 def traverse_submission(submission):
     for line in submission.splitlines():
         yield line
     raise StopIteration()
-
 
 def get_content(submission):
     content = ""
@@ -50,7 +57,6 @@ def get_title(line, submission):
 
 def get_author(line, submission):
     # is there a title on the same line?
-    print '->', line
     i = line.find(':')
     if i != -1:
         author = line[i+1:]
@@ -58,15 +64,26 @@ def get_author(line, submission):
         #assume on a separate line
         author = ""
         for line in submission:
-            print '->', line
             result = start_pattern.search(line)
             if result:
                 break
             author = author + line
     return author
 
-def get_description(submission):
+
+def get_description(line, submission):
+    description = ""
+    i = line.find(':')
+    if i != -1:
+        description = line[i+1:]
+    for line in submission:
+        #print '->', line
+        result = start_pattern.search(line)
+        if result:
+            break
+        description = description + line
     return description
+
 
 def parse_submission(submission):
 
@@ -79,12 +96,10 @@ def parse_submission(submission):
     for line in submission_gen:
         result = title_pattern.search(line)
         if result:
-            print '*title', result.group(0)
             title= get_title(line, submission_gen)
             continue
         result = author_pattern.search(line)
         if result:
-            print '*author', result.group(0)
             facilitators = get_author(line, submission_gen)
             continue
         result = abstract_pattern.search(line)
@@ -93,14 +108,15 @@ def parse_submission(submission):
             #print '*abstract', result.group(0)
             continue
 
-    return title, description, facilitators
+    return title, facilitators, description
 
 
 def main():
     with codecs.open("submission.wiki", encoding="utf-8") as fp:
         submission = fp.read()
 
-    print parse_submission(submission)
+    t, a, d = parse_submission(submission)
+    print d
 
 if __name__ == "__main__":
     main()
