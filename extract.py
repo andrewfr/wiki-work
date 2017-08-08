@@ -15,7 +15,6 @@ def get_submission_wikicode_link(url_prefix, submission):
         link = url_prefix + link.parent["href"]
     return link
 
-
 def get_submission_wikicode(html_doc):
     soup = BeautifulSoup(html_doc,"lxml")
     submission = soup.find("textarea")

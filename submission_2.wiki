@@ -1,0 +1,68 @@
+<!-- Simply provide information about your submission below and save the page. -->
+{{Accepted submission}}
+
+
+{{Open submission}}
+; Submission no. 4014 - LE3
+<!-- will be added by the Programme Committee-->
+
+; Title of the submission
+: Legal Advocacy for the Projects and the Movement
+
+; Type of submission (lecture, panel, tutorial/workshop, roundtable discussion, lightning talk, poster, birds of a feather discussion)
+: Lecture
+
+; Author of the submission
+: Jacob Rogers and Aeryn Palmer (WMF legal)
+
+; Language of presentation
+: English
+
+; E-mail address
+: jrogers@wikimedia.org, apalmer@wikimedia.org
+
+; Username
+: Jrogers (WMF), APalmer (WMF)
+
+; Country of origin
+: USA
+
+; Affiliation, if any (organisation, company etc.)
+: WMF
+
+; Personal homepage or blog
+: N/A
+
+; Abstract ''(up to 300 words to describe your proposal)''
+: The Wikimedia Foundation engages in legal advocacy, including sometimes bringing litigation where necessary for the Foundation and the broader movement together (such as our lawsuit against the NSA) or weighing in through amicus briefs on important legal cases that could affect the Wikimedia projects, the overall health of the internet, or the Foundation's operations. This presentation will cover how we decide where to engage in legal advocacy and review several of the cases over the past year. This review will include the current status of the case against the NSA, our interventions to oppose worldwide court orders, and our fight against attempts at weakening of section 230 of the Communications Decency Act that protects online service providers. We will also review our briefs opposing the executive orders restricting travel to the United States.
+
+; What will attendees take away from this session?
+: Attendees will gain a better understanding of how legal advocacy can protect the Wikimedia movement and improve conditions for adding new content. Attendees will also understand how the Foundation chooses what cases to join and why. 
+
+; Theme of presentation
+: Legal & Free Culture
+
+; For workshops and discussions, what level is the intended audience?
+: Beginning. Any attendees interested in the law around the Wikimedia projects and understanding how the Foundation addresses these legal issues. Any experience level is appropriate.
+
+; Length of session (if other than 25 minutes, specify how long)
+: 25 minutes
+
+; Will you attend Wikimania if your submission is not accepted?
+: Yes
+
+; Is this Submission a Draft or Final?  
+
+{{Completed Submission}}
+
+<!-- Do not edit the section below. -->
+
+== Interested attendees ==
+
+'''If you are interested in attending this session, please sign with your username below. This will help reviewers to decide which sessions are of high interest. Sign with a hash and four tildes. (<nowiki># ~~~~</nowiki>).'''
+
+# [[User:Amire80|Amir É. Aharoni]] ([[User talk:Amire80|talk]]) 11:23, 11 April 2017 (UTC)
+
+[[Category:All submissions|{{SUBPAGENAME}}]]
+[[Category:Lecture submissions]]
+

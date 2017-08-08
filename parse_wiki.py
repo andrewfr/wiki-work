@@ -8,6 +8,9 @@ import codecs
 import re
 from bs4 import BeautifulSoup
 
+from extract import get_submission_wikicode_link
+from extract import get_submission_wikicode
+
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -325,12 +328,12 @@ def get_link(prefix, event):
     return prefix + quote(link)
 
 def main():
-    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
-    html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
+    html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
+    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
     schedule = get_schedule(html_doc)
     events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
-    for event in get_submissions_data(prefix, events):
+    for event in events:
         print event
     #get_submissions_data(prefix, events)
     #rooms = get_rooms(schedule)
