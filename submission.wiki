@@ -1,0 +1,75 @@
+<!-- Simply provide information about your submission below and save the page. -->
+{{Completed Submission}}
+; Submission no. 1014 - FG
+<!-- will be added by the Programme Committee-->
+
+; Title of the submission
+: Wikipédia, les bibliothèques publiques et Montréal
+
+; Type of submission (lecture, panel, tutorial/workshop, roundtable discussion, lightning talk, poster, birds of a feather discussion)
+: 
+Lecture
+; Author of the submission
+: <!-- Either real name or Wiki user name or both-->
+Ivan Filion, directeur des Bibliothèques de Montréal
+; Language of presentation
+: <!-- Specify. This will be a bilingual conference with presentations in French and English; languages other than  French or English may limit audience -->
+Français
+; E-mail address
+: ifilion@ville.montreal.qc.ca 
+
+; Username
+:
+
+; Country of origin
+Québec, Canada
+; Affiliation, if any (organisation, company etc.)
+: Bibliothèques de Montréal, Service de la culture, Ville de Montréal
+
+; Personal homepage or blog
+:
+
+; Abstract ''(up to 300 words to describe your proposal)''
+: <!-- Abstract should be in English or French. If possible, you are welcome to include a second translated abstract in English for French submissions or French for English submissions. -->
+: Cette communication vise, en premier lieu, à exposer le contexte et l'ancrage historique de la relation entre les bibliothèques publiques et Wikipédia. Ensuite, les grandes lignes de la prise de position récente de l'IFLA (International Federation of Library Associations and Institutions) seront discutées en vue de faire ressortir la signification de cet engagement pour la transition numérique des bibliothèques publiques . Enfin, le parcours des bibliothèques de Montréal au sein du projet de l'encyclopédie collaborative et des GLAMs ainsi qu'un survol des défis viendront conclure cette réflexion. 
+
+; What will attendees take away from this session?
+: Cette session  permettra de découvrir l'engagement des bibliothèques publiques au sein du projet de Wikipédia, et particulièrement comment cette engagement s'est incarnée à Montréal. 
+
+; Theme of presentation
+: Education, Wikiculture et communauté, GLAM
+<!-- one of:
+* Sister Projects
+* WikiCulture & Community
+* Technology, Interface & Infrastructure
+* Legal & Free Culture
+* GLAM
+* Education
+-->
+
+; For workshops and discussions, what level is the intended audience?
+: <!--Beginning, intermediate, advanced--> 
+
+; Length of session (if other than 25 minutes, specify how long)
+: 25 minutes
+
+; Will you attend Wikimania if your submission is not accepted?
+:
+Oui.
+; Slides or further information (optional)
+:
+
+; Special requests
+: <!-- for example - cannot present on Saturday -->
+
+; Is this Submission a Draft or Final? {{Completed Submission}}
+<!-- Do not edit the section below. -->
+
+== Interested attendees ==
+
+'''If you are interested in attending this session, please sign with your username below. This will help reviewers to decide which sessions are of high interest. Sign with a hash and four tildes. (<nowiki># ~~~~</nowiki>).'''
+
+# [[User:Stanisom|Stanisom]] ([[User talk:Stanisom|talk]]) 23:32, 3 July 2017 (UTC)
+
+[[Category:All submissions|{{SUBPAGENAME}}]]
+
