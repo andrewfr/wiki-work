@@ -160,6 +160,10 @@ def get_details(event_type, line):
         answer = presentation_pattern.search(line)
         if answer:
             data = answer.group(1).split("|")
+            if len(data) == 1:
+                print line
+                print data
+                sys.exit()
             return data
         else:
             return None
@@ -345,11 +349,11 @@ def get_link(prefix, event):
 
 def main():
     friday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit"
-    saturday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit"
-    sunday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"
+    #saturday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit"
+    #sunday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"
     
     #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
-    html_doc = get_url(sunday)
+    html_doc = get_url(friday)
     schedule = get_schedule(html_doc)
     events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"

@@ -351,13 +351,51 @@ def get_link(prefix, event):
     link = link.replace(" ","_")
     return prefix + quote(link.encode('utf-8'))
 
-def main():
+def check_submissions_links(url_prefix, events):
+    for event in events:
+        try:
+            if event[1][0] == "presentation":
+                url = get_link(url_prefix, event)
+                response = requests.head(url)
+                if response.status_code != 200:
+                    print url, response.status_code
+                else:
+                    print url, "OK"
+        except:
+            print "problem with", event
+            traceback.print_exc()
+
+def test_csv():
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
     #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
     schedule = get_schedule(html_doc)
     events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
     generate_csv("friday.csv", events)
+
+    #get_submissions_data(prefix, events)
+    #rooms = get_rooms(schedule)
+    #presentations = get_presentations(schedule)
+    #sessions = get_sessions(schedule)
+
+    # now lets add the rooms to the presentations
+
+    #add_rooms(rooms, presentations)
+
+def test_submission_links():
+
+
+    return
+
+
+def main():
+    test_csv()
+    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
+    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
+    #schedule = get_schedule(html_doc)
+    #events = get_events(schedule)
+    #prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
+    #generate_csv("friday.csv", events)
 
     """
     #get_submissions_data(prefix, events)
