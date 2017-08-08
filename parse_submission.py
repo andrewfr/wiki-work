@@ -10,6 +10,7 @@ title_pattern = re.compile("\s*;\s*Title")
 author_pattern = re.compile("\s*;\s*Author")
 abstract_pattern = re.compile("\s*;\s*Abstract")
 start_pattern = re.compile("^\s*;")
+comment_pattern = re.compile("\<\!\-\-(.*)\-\-\>")
 
 def replace_comment(line):
     start = line.find("<!--")
@@ -52,6 +53,7 @@ def get_title(line, submission):
         result = start_pattern.search(line)
         if result:
             break
+        line = line[1:]
         title = title + line
     return title
 
@@ -67,6 +69,7 @@ def get_author(line, submission):
             result = start_pattern.search(line)
             if result:
                 break
+            line = line[1:]
             author = author + line
     return author
 
@@ -81,6 +84,7 @@ def get_description(line, submission):
         result = start_pattern.search(line)
         if result:
             break
+        line = line[1:]
         description = description + line
     return description
 
@@ -116,6 +120,17 @@ def main():
         submission = fp.read()
 
     t, a, d = parse_submission(submission)
+    print t
+    print a
+    print d
+    print "---"
+
+    with codecs.open("submission_2.wiki", encoding="utf-8") as fp:
+        submission = fp.read()
+
+    t, a, d = parse_submission(submission)
+    print t
+    print a
     print d
 
 if __name__ == "__main__":
