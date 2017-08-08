@@ -6,6 +6,8 @@ import pdb
 import json
 import codecs
 import re
+import csv
+
 from bs4 import BeautifulSoup
 
 from extract import get_submission_wikicode_link
@@ -35,6 +37,28 @@ c = {"room ballroomwc" : "Ballroom West",
         "room salon7"     : "Joyce/Jarry",
         "room salon8"     : "Salon 1", 
         "room salon9"     : "Salon 4" } 
+
+
+def generate_csv(file_name, events):
+
+    headers = ['title', 'description', 'faciliator_array', 'faciliators', 'location', 'pathways', 'schedule-block', 'space', 'start', 'end']
+
+    dummy = ['','','','','','','','','','']
+    #dummy = ['0','1','2','3','4','5','6','7','8','9']
+    
+    with codecs.open(file_name, "wb", encoding="utf-8") as fp:
+        writer = csv.writer(fp, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+        writer.writerow(headers)
+
+        for event in events:
+            if event[1][0] == "presentation":
+                try:
+                    writer.writerow(dummy)
+                    dummy[0] = event[1][1][1]
+                    #writer.writerow(event[1][1][1])
+                except:
+                    pass
+    return
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -333,8 +357,9 @@ def main():
     schedule = get_schedule(html_doc)
     events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
-    for event in events:
-        print event
+    generate_csv("friday.csv", events)
+
+    """
     #get_submissions_data(prefix, events)
     #rooms = get_rooms(schedule)
     #presentations = get_presentations(schedule)
@@ -343,7 +368,7 @@ def main():
     # now lets add the rooms to the presentations
 
     #add_rooms(rooms, presentations)
-
+    """
 
 
 if __name__ == "__main__":
