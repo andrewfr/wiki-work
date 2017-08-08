@@ -330,7 +330,8 @@ def main():
     schedule = get_schedule(html_doc)
     events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
-    get_submissions_data(prefix, events)
+    for event in get_submissions_data(prefix, events):
+        print event
     #get_submissions_data(prefix, events)
     #rooms = get_rooms(schedule)
     #presentations = get_presentations(schedule)

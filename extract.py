@@ -32,7 +32,8 @@ def main():
     print wikicode_link
     result = requests.get(wikicode_link)
     wikicode = get_submission_wikicode(result.text)
-    print parse_submission(wikicode)   
+    print wikicode
+    #print parse_submission(wikicode)   
     
 
 

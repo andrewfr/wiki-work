@@ -11,12 +11,13 @@ def traverse_submission(submission):
 def get_content(submission):
     content = ""
     for line in submission:
+        print "->", line
         if line.find("<!--") >= 0 :
             continue
         if line.find(";") >= 0 :
             break
         content = content + line
-
+    print "*", content, len(content)
     if content[0] == ":":
         content = content[1:]
     return content
@@ -30,12 +31,14 @@ def parse_submission(submission):
     facilitators = None
 
     for line in submission_gen:
-        if line.find("Title of the submission") != -1:
-            title = get_content(submission_gen)
+        i = line.find(";Title of the submission")
+        if i != -1:
+            title = line[i + 1 :]
             continue
-        if line.find("; Author of the submission") != -1:
-            facilitators = get_content(submission_gen)
-        if line.find("; Abstract") != -1:
+        i = line.find(";Author of the submission")
+        if i != -1:
+            facilitators = line[i + 1 :]
+        i = line.find("; Abstract") != -1:
             description = get_content(submission_gen)
 
     return title, description, facilitators
