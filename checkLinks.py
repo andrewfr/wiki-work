@@ -341,7 +341,7 @@ def get_link(prefix, event):
         traceback.print_exc()
         return None
 
-    return prefix + quote(link)
+    return prefix + quote(link.encode('utf-8'))
 
 def main():
     friday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit"
@@ -349,7 +349,7 @@ def main():
     sunday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"
     
     #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
-    html_doc = get_url(friday)
+    html_doc = get_url(sunday)
     schedule = get_schedule(html_doc)
     events = get_events(schedule)
     prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"

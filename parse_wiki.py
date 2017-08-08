@@ -349,7 +349,7 @@ def get_submission(url):
 def get_link(prefix, event):
     link = event[1][1][1]
     link = link.replace(" ","_")
-    return prefix + quote(link)
+    return prefix + quote(link.encode('utf-8'))
 
 def main():
     html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
