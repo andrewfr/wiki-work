@@ -2,9 +2,13 @@ import codecs
 import re
 import pdb
 
-title_pattern = re.compile("^\s*\;Title\s+of")
-author_pattern = re.compile("^\s*\;Author\s+of")
-abstract_pattern = re.compile("^\s*\;Abstract")
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+title_pattern = re.compile("\s*;\s*Title")
+author_pattern = re.compile("\s*;\s*Author")
+abstract_pattern = re.compile("\s*;\s*Abstract")
 
 def traverse_submission(submission):
     for line in submission.splitlines():
@@ -35,17 +39,21 @@ def parse_submission(submission):
     facilitators = None
 
     for line in submission_gen:
+        print '->', line
         result = title_pattern.search(line)
         if result:
-            print 'title', result.group(0)
+            title= result.group(0)
+            print '*title', result.group(0)
             continue
         result = author_pattern.search(line)
         if result:
-            print 'author', result.group(0)
+            facilitators = result.group(0)
+            print '*author', result.group(0)
             continue
         result = abstract_pattern.search(line)
         if result:
-            print 'abstract', result.group(0)
+            description = result.group(0)
+            print '*abstract', result.group(0)
             continue
 
     return title, description, facilitators
