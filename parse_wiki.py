@@ -187,6 +187,8 @@ def get_details(event_type, line):
         answer = presentation_pattern.search(line)
         if answer:
             data = answer.group(1).split("|")
+            if len(data) == 1:
+                data = [data[0],data[0]]
             return data
         else:
             return None
@@ -383,31 +385,22 @@ def test_csv():
     #add_rooms(rooms, presentations)
 
 def test_submission_links():
-
-
+    friday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit"
+    #saturday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit"
+    #sunday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"
+    
+    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
+    html_doc = get_url(friday)
+    schedule = get_schedule(html_doc)
+    events = get_events(schedule)
+    prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
+    check_submissions_links(prefix, events)
     return
 
 
 def main():
-    test_csv()
-    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit")
-    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
-    #schedule = get_schedule(html_doc)
-    #events = get_events(schedule)
-    #prefix = "https://wikimania2017.wikimedia.org/wiki/Submissions/"
-    #generate_csv("friday.csv", events)
-
-    """
-    #get_submissions_data(prefix, events)
-    #rooms = get_rooms(schedule)
-    #presentations = get_presentations(schedule)
-    #sessions = get_sessions(schedule)
-
-    # now lets add the rooms to the presentations
-
-    #add_rooms(rooms, presentations)
-    """
-
+    test_submission_links()
+   
 
 if __name__ == "__main__":
     main()
