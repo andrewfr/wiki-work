@@ -90,6 +90,17 @@ def get_description(line, submission):
 
 
 def parse_submission(submission):
+    """
+    extract title, faciliator and description data
+
+    args:
+        submission: string representing a html document
+
+    returns:
+        title: a string
+        faciliators: a list of strings
+        description : a string
+    """
 
     submission_gen = traverse_submission(submission)
 
