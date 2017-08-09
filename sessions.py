@@ -7,6 +7,16 @@ time_pattern = re.compile("(\d\d\:\d\d)\-(\d\d\:\d\d)")
 
 schedule_block_info = []
 
+class ScheduleBlock(object):
+    def __init__(self, start_time, end_time, block_name, sessions):
+        self.start_time = start_time
+        self.end_time = end_time
+        self.block_name = block_name
+        self.sessions = sessions
+
+    def __repr__(self):
+        (self.start_time, self.end_time, self.block_name) % "%s %s %s"
+
 def traverse_schedule(schedule):
     for line in schedule:
         yield line
@@ -56,8 +66,12 @@ def generate_schedule_info(wiki):
         if result:
             block_name, start_time, end_time = get_session_info(result, line)
             sessions = get_them_sessions(schedule_gen)
-            print len(sessions), sessions
-
+            block = ScheduleBlock(start_time, end_time, block_name, sessions)
+            print block.block_name
+            print block.start_time
+            print block.end_time
+            print block.sessions
+            schedule_block_info.append(block)
     return
 
 
