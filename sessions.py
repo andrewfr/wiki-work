@@ -1,5 +1,6 @@
 import codecs
 import re
+uo
 
 session_pattern = re.compile("\s*!\s*(Session\s*\d+)")
 session_name_pattern = re.compile("(\'.\d+)\:(.*)\'")
@@ -9,13 +10,11 @@ schedule_block_info = []
 
 class ScheduleBlock(object):
     def __init__(self, start_time, end_time, block_name, sessions):
-        self.start_time = start_time
+        self.start_time = istart_time
         self.end_time = end_time
         self.block_name = block_name
         self.sessions = sessions
 
-    def __repr__(self):
-        (self.start_time, self.end_time, self.block_name) % "%s %s %s"
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -81,7 +80,6 @@ def get_schedule_info(event):
 
     args:
         event : data structure representing an event
-
     return:
         tuple : (name, session_id, session_name)
 
@@ -89,6 +87,7 @@ def get_schedule_info(event):
         session_id - string
         session_name - string
     """
+
 
     return name, session_id, session_name
 
