@@ -1,6 +1,7 @@
 import traceback
 from urllib import quote
 from dateutil.parser import parse
+from datetime import timedelta
 import requests
 import pdb
 import json
@@ -26,6 +27,7 @@ event_pattern = re.compile('^\|\s*class\s*="(presentation|unconference|workshop|
 logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
 comment_pattern = re.compile('^\<\!\-\-(.*)\-\-\>')
 breakout_pattern = re.compile("(\w*)([Bb]reakout)(\w*)")
+time_span_pattern = re.compile('rowspan="(\d+)"')
 
 c = {"room ballroomwc" : "Ballroom West", 
         "room ballroome"  : "Ballroom Center", 
@@ -59,6 +61,17 @@ def generate_csv(file_name, events):
                 except:
                     pass
     return
+
+def get_time_span(line):
+    small_block = 15
+    big_block = 30
+    block = small_block
+
+    time_span = time_span_pattern.search(line)
+    if time_span:
+        return int(time_span.group(1)) * block 
+    else:
+        return 1 * block
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -261,6 +274,11 @@ def get_details(event_type, line):
 
 def get_events(schedule):
 
+    def calculate_ending(the_time, time_span):
+        start_time = parse(the_time)
+        end_time = start_time + timedelta(minutes=time_span)
+        return end_time.strftime("%H:%M")
+
     def get_the_events(schedule):
         the_events = []
         line = schedule.next()
@@ -282,9 +300,13 @@ def get_events(schedule):
             break
 
         if result:
+            time_span = get_time_span(line)
             details = get_details(result.group(1), line)
-            the_events.append((the_time, details))
+            end_time = calculate_ending(the_time, time_span)
+            the_events.append((the_time, details, end_time))
+            
 
+          
             # now get the rest of the events
             for line in schedule:
                 t = get_time(line)
@@ -397,9 +419,22 @@ def test_submission_links():
     check_submissions_links(prefix, events)
     return
 
+def test_times():
+    friday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit"
+    #saturday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit"
+    #sunday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"
+    
+    #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
+    html_doc = get_url(friday)
+    schedule = get_schedule(html_doc)
+    events = get_events(schedule)
+    for event in events:
+        print event
+
+    return
 
 def main():
-    test_submission_links()
+    test_times()
    
 
 if __name__ == "__main__":
