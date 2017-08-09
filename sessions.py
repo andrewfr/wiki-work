@@ -1,6 +1,6 @@
 import codecs
 import re
-uo
+from dateutil.parser import parse
 
 session_pattern = re.compile("\s*!\s*(Session\s*\d+)")
 session_name_pattern = re.compile("(\'.\d+)\:(.*)\'")
@@ -8,13 +8,20 @@ time_pattern = re.compile("(\d\d\:\d\d)\-(\d\d\:\d\d)")
 
 schedule_block_info = []
 
+class Event(object):
+    def __init__(self, index, start_time):
+        self.start_time = start_time
+        self.index = index
+
+    def __repr__(self):
+        '%s %d' % (self.start_time, self.index)
+
 class ScheduleBlock(object):
     def __init__(self, start_time, end_time, block_name, sessions):
-        self.start_time = istart_time
-        self.end_time = end_time
+        self.start_time = parse(start_time)
+        self.end_time = parse(end_time)
         self.block_name = block_name
         self.sessions = sessions
-
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -55,7 +62,6 @@ def generate_schedule_info(wiki):
 
         return them_sessions
 
-
     session_blocks = []
 
     schedule_gen = traverse_schedule(wiki)
@@ -88,8 +94,17 @@ def get_schedule_info(event):
         session_name - string
     """
 
+    name = ""
+    session_id = ""
+    session_name = ""
+
+    e = Event(3,"11:00")
+
+    for block in schedule_block_info:
+        print block.start_time, block.end_time
 
     return name, session_id, session_name
+
 
 def open_schedule(file_name):
     with codecs.open(file_name,encoding="utf-8") as fp:
@@ -103,9 +118,14 @@ def print_schedule_block():
     """
     return
 
-def main():
+def testSchedule():
     wiki = open_schedule("data/friday.wiki")
     generate_schedule_info(wiki)
+    e = Event(3,"11:00")
+    get_schedule_info(e)
+
+def main():
+    testSchedule()
 
 
 if __name__ == "__main__":
