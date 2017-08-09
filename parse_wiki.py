@@ -274,6 +274,17 @@ def get_details(event_type, line):
 
 def get_events(schedule):
 
+    def add_session_number(events):
+        new_events = []
+        for i in range(0, len(events)):
+            if len(events[i]) == 2:
+                new_event = ((events[0], events[1], i))
+            elif len(events[i]) == 3:
+                event_type, info = events[i][1]
+                new_event = (event_type, info, i)
+            new_events.append(new_event)
+        return new_events
+
     def calculate_ending(the_time, time_span):
         start_time = parse(the_time)
         end_time = start_time + timedelta(minutes=time_span)
@@ -305,8 +316,6 @@ def get_events(schedule):
             end_time = calculate_ending(the_time, time_span)
             the_events.append((the_time, details, end_time))
             
-
-          
             # now get the rest of the events
             for line in schedule:
                 t = get_time(line)
@@ -320,6 +329,7 @@ def get_events(schedule):
                    details = get_details(result.group(1), line)
                    the_events.append((the_time, details))
 
+        the_events = add_session_number(the_events)
         return the_events
 
     daily_events = []
