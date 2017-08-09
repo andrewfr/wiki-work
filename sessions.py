@@ -33,13 +33,17 @@ def generate_schedule_info(wiki):
         them_sessions = []
         for line in session_block:
             if line[0] == "!":
-                print "-----"
                 break
             if line.find("header") != -1:
                 # okay we are a session
                 result = session_name_pattern.search(line)
                 if result:
-                    print "->", result.group(1), result.group(2)
+                    data = (result.group(1), result.group(2))
+                else:
+                    data = line[2:].split("|")
+                    data = ("bs", data[1])
+                them_sessions.append(data)
+
         return them_sessions
 
 
@@ -52,6 +56,7 @@ def generate_schedule_info(wiki):
         if result:
             block_name, start_time, end_time = get_session_info(result, line)
             sessions = get_them_sessions(schedule_gen)
+            print len(sessions), sessions
 
     return
 
