@@ -1,7 +1,8 @@
 import codecs
 import re
 
-session_pattern = re.compile("\s*!\s*(Session\s*\d)")
+session_pattern = re.compile("\s*!\s*(Session\s*\d+)")
+session_name_pattern = re.compile("(\'.\d+)\:(.*)\'")
 time_pattern = re.compile("(\d\d\:\d\d)\-(\d\d\:\d\d)")
 
 schedule_block_info = []
@@ -31,14 +32,14 @@ def generate_schedule_info(wiki):
     def get_them_sessions(session_block):
         them_sessions = []
         for line in session_block:
-            result = session_pattern.search(line)
-            if result:
-                if line.find("header") != -1:
-                    # okay we are a session
-                    print line
-
+            if line[0] == "!":
+                print "-----"
                 break
-            print line
+            if line.find("header") != -1:
+                # okay we are a session
+                result = session_name_pattern.search(line)
+                if result:
+                    print "->", result.group(1), result.group(2)
         return them_sessions
 
 
