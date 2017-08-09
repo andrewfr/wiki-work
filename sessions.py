@@ -51,7 +51,7 @@ def generate_schedule_info(wiki):
                     data = (result.group(1), result.group(2))
                 else:
                     data = line[2:].split("|")
-                    data = ("bs", data[1])
+                    data = ("bo", data[1])
                 them_sessions.append(data)
 
         return them_sessions
@@ -96,6 +96,13 @@ def open_schedule(file_name):
     with codecs.open(file_name,encoding="utf-8") as fp:
         wiki_schedule = [line.strip() for line in fp]
     return wiki_schedule
+
+
+def print_schedule_block():
+    """
+    this is a test of the data structure
+    """
+    return
 
 def main():
     wiki = open_schedule("data/friday.wiki")
