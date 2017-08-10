@@ -18,11 +18,12 @@
 ! class="room salon7"     |
 ! class="room salon8"     |
 ! class="room salon9"     |
+!
 ! class="time" | {{TNT|name-timeofday}}
 
 |-style="vertical-align: top;"
 ! 08:00
-| class="logistics" colspan="10" rowspan="2" | {{TNT|event-registration}}
+| colspan="11" rowspan="2" class="logistics" | {{TNT|event-registration}}
 ! 08:00
 
 |-style="vertical-align: top;"
@@ -30,8 +31,13 @@
 ! 08:30
 
 |-style="vertical-align: top;"
+! 08:45
+| colspan="11" rowspan="1" class="keynote" | '''Moosetown drummers'''
+! 08:45
+
+|-style="vertical-align: top;"
 ! 09:00
-| class="keynote" rowspan="2" colspan="10"| {{TNT|event-opening}} <br/> <small>'''Ballroom West + Center (level 4)'''</small>
+| colspan="11" rowspan="2" class="keynote" | {{TNT|event-opening}} <br/> <small>'''Ballroom West + Center (level 4)'''</small>
 ! 09:00
 
 |-style="vertical-align: top;"
@@ -40,7 +46,7 @@
 
 |-style="vertical-align: top;"
 ! 09:30
-| class="keynote"   rowspan="4" colspan="10"  | '''[[Keynotes|Jimmy Wales in conversation with Gabriella Coleman]]'''<br/> '''moderated by Evan Prodromou''' <br/> '''''Community and information in a partisan world'''''<br/> <small>'''Ballroom West + Center (level 4)'''</small>
+| colspan="11" rowspan="4" class="keynote" | '''[[Keynotes|Jimmy Wales in conversation with Gabriella Coleman]]'''<br/> '''moderated by Evan Prodromou''' <br/> '''''Community and information in a partisan world'''''<br/> <small>'''Ballroom West + Center (level 4)'''</small>
 
 ! 09:30
 
@@ -59,6 +65,7 @@
 |- style="vertical-align: top;"
 ! 10:30
 | class="logistics" colspan="10" | {{TNT|event-break}}
+|Room set-up; briefing,<br />Facebook Live?
 ! 10:30
 |-style="vertical-align: top;"
 ! class="time" | {{TNT|name-timeofday}}
@@ -72,6 +79,7 @@
 ! class="room salon7"     | Joyce/Jarry <br/><small>(level A)</small>
 ! class="room salon8"     | Salon 1 <br/><small>(level 2)</small>
 ! class="room salon9"     | Salon 4 <br/><small>(level 2)</small>
+! class="room salon6"     | Salon 6 <br /><small>(level 3)</small>
 ! class="time" | {{TNT|name-timeofday}}
 |- style="vertical-align: top;"
 ! Session 1: 11:00-12:30
@@ -82,9 +90,10 @@
 | class="header" rowspan="1" | '''s5: Why & what we read''' 
 | class="header" rowspan="1" | '''s6: Wikidata: Wikidata & arts'''
 | class="header" rowspan="1" | '''r1: Roundtables 1''' 
-| class="header"     rowspan="1" | '''w1: Workshop 1: Communication'''
+| class="header" rowspan="1" | '''w1: Workshop 1: Communication'''
 |class ="header" rowspan="1" | Open for breakout sessions 
 |class ="header" rowspan="1" | Open for breakout sessions 
+| class ="header" rowspan="1" |'''Wikimedia Movement Strategy Space'''
 ! Session 1: 11:00-12:30
 
 |- style="vertical-align: top;"
@@ -99,6 +108,7 @@
 | class="workshop"     rowspan="4" | [[Submissions/How good communication can help you talk to reporters, rule the world, and do other cool stuff: An introductory guide to public relations|How good communication can help you talk to reporters, rule the world, and do other cool stuff: An introductory guide to public relations]]
 |class ="unconference" rowspan="4" |  [[Submissions/Wiki-in-Residence Birds|Wikipedian-in-Residence Birds of a Feather]] 
 |class ="unconference" rowspan="2" |  Breakout sessions
+| rowspan="6" |Strategic Direction Feedback 03
 ! 11:00
 
 |-style="vertical-align: top;"
@@ -143,12 +153,12 @@
 
 |- style="vertical-align: top;"
 ! 12:30
-| class="logistics" rowspan="1" colspan="10" | {{TNT|event-lunch}} <br/> level A & B
+| colspan="11" rowspan="1" class="logistics" | {{TNT|event-lunch}} <br/> level A & B
 ! 12:30
 
 |- style="vertical-align: top;"
 ! 13:00
-| class="logistics" rowspan="2" colspan="10" | Birds of a feather meetups: [[Submissions/Wikipedia + Libraries Meetup|Wikipedia + Libraries meetup]], Joyce/Jarry (level A)
+| colspan="11" rowspan="2" class="logistics" | Birds of a feather meetups: [[Submissions/Wikipedia + Libraries Meetup|Wikipedia + Libraries meetup]], Joyce/Jarry (level A)
 ! 13:00
 
 |- style="vertical-align: top;"
@@ -167,6 +177,7 @@
 ! class="room salon7"     | Joyce/Jarry <br/><small>(level A)</small>
 ! class="room salon8"     | Salon 1 <br/><small>(level 2)</small>
 ! class="room salon9"     | Salon 4 <br/><small>(level 2)</small>
+! class="room salon6"     | Salon 6 <br /><small>(level 3)</small>
 ! class="time" | {{TNT|name-timeofday}}
 
 
@@ -174,22 +185,23 @@
 ! Session 2: 14:00-15:30
 | class="header" rowspan="1" | '''s8: Libraries & education (2) <br/> <small>in French, simultaneous translation provided</small> '''
 | class="header" rowspan="1" | '''s7: Collaboration around the globe'''
-| class="header" rowspan="1" | '''s10: Community health & Education'''
 | class="header" rowspan="1" | '''s11: GLAM: Collaborations'''
+| class="header" rowspan="1" | '''s10: Community health & Education'''
 | class="header" rowspan="1" | '''s12: Legal: Advocacy''' 
 | class="header" rowspan="1" | '''s13: Wikidata: Invoke:Wikidata''' 
 | class="header" rowspan="1" | '''w4: Workshop: Teambuilding'''
-| class="header"     rowspan="1" | '''w3: Workshop: Wikidata'''
+| class="header" rowspan="1" | '''w3: Workshop: Wikidata'''
 |class ="header" rowspan="1" |  '''r2: Roundtables 2: Community health'''  
 |class ="header" rowspan="1" |  Open for breakout sessions 
+|class ="header" rowspan="1" |'''Wikimedia Movement Strategy Space'''
 ! Session 2: 14:00-15:30
 
 |- style="vertical-align: top;"
 ! 14:00
 | class="presentation" rowspan="2" | [[Submissions/Sciences, histoire et projets Wiki, le mariage unique québécois|Sciences, histoire et projets Wiki, le mariage unique québécois]]
 | class="presentation" rowspan="4" | [[Submissions/Free knowledge for complete beginners: introducing Wikipedia to new readers|Free knowledge for complete beginners: introducing Wikipedia to new readers]]  
-| class="presentation" rowspan="2" | [[Submissions/Introducing Training Modules - multilingual training on combating harassment|Introducing Training Modules - multilingual training on combating harassment]]
 | class="presentation" rowspan="4" | [[Submissions/The Internet Archive and Wikimedia - Common Knowledge Goals|The Internet Archive and Wikimedia - Common Knowledge Goals]]
+| class="presentation" rowspan="2" | [[Submissions/Possible strategies of increasing involvement of scientists and academics in Wikimedia projects|Possible strategies of increasing involvement of scientists and academics in Wikimedia projects]]
 | class="presentation" rowspan="2" | [[Submissions/Legal Advocacy for the Projects and the Movement|Legal Advocacy for the Projects and the Movement]]
 | class="presentation" rowspan="6" | [[Wikidata & infoboxes panel]]: <small>
 *[[Submissions/Put data on it: Using Wikidata data in Wikimedia projects|Put data on it: Using Wikidata data in Wikimedia projects]], 
@@ -200,6 +212,7 @@
 | class="workshop"     rowspan="6" | [[Submissions/A Gentle Introduction to Wikidata for Complete Beginners|A Gentle Introduction to Wikidata for Complete Beginners]]
 | class="presentation" rowspan="3" | [[Submissions/From Mexico City to Montréal: The Code of Conduct and You|From Mexico City to Montréal: The Code of Conduct and You]]
 |class ="unconference" rowspan="4" |  [[Submissions/Art+Feminism Meetup|Art+Feminism Meetup]]
+| rowspan="6" |
 ! 14:00
 
 |- style="vertical-align: top;"
@@ -210,8 +223,8 @@
 ! 14:30
 | class="presentation" rowspan="2" | [[Submissions/The WikiMOOC, a new way to learn how to edit Wikipedia|The WikiMOOC, a new way to learn how to edit Wikipedia]]
 <!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
-| class="presentation" rowspan="2" | [[Submissions/Possible strategies of increasing involvement of scientists and academics in Wikimedia projects|Possible strategies of increasing involvement of scientists and academics in Wikimedia projects]]
 <!-- | class="presentation" rowspan="2" | {{TNT|event-presentations}} -->
+| class="presentation" rowspan="2" | [[Submissions/Student Learning Outcomes using Wikipedia based assignments|Student Learning Outcomes using Wikipedia based assignments]]
 | class="presentation" rowspan="4" | [[Submissions/New Wikimedian Order - How to represent Wikimedia's values in international organisations?|New Wikimedian Order - How to represent Wikimedia's values in international organisations?]]
 <!--| class="presentation" rowspan="2" | Wikidata + infoboxes panel-->
 <!--| class="presentation" rowspan="2" | {{TNT|event-presentations}} -->
@@ -229,8 +242,8 @@
 ! 15:00
 | class="presentation" rowspan="2" | [[Submissions/How to create a good school project on Wikipedia|How to create a good school project on Wikipedia]]
 | class="presentation" rowspan="2" | Free knowledge panel discussion: Outreach in countries where Wikipedia isn't well known
-| class="presentation" rowspan="2" | [[Submissions/Student Learning Outcomes using Wikipedia based assignments|Student Learning Outcomes using Wikipedia based assignments]]
 | class="presentation" rowspan="2" | [[Submissions/Constitutional Court meets Wikipedia|Constitutional Court meets Wikipedia]]
+| class="presentation" rowspan="2" | 
 <!--| class="presentation" rowspan="2" | {{TNT|event-presentations}}-->
 <!-- | class="presentation" rowspan="2" | [[Submissions/invoke:Wikidata|invoke:Wikidata (discussion)]] -->
 | class="presentation" rowspan="2" | 
@@ -245,7 +258,7 @@
 
 |- style="vertical-align: top;"
 ! 15:30
-| class="logistics" colspan="10" | {{TNT|event-break}}
+| colspan="11" class="logistics" | {{TNT|event-break}}
 ! 15:30
 |-style="vertical-align: top;"
 ! class="time" | {{TNT|name-timeofday}}
@@ -259,6 +272,7 @@
 ! class="room salon7"     | Joyce/Jarry <br/><small>(level A)</small>
 ! class="room salon8"     | Salon 1 <br/><small>(level 2)</small>
 ! class="room salon9"     | Salon 4 <br/><small>(level 2)</small>
+! class="room salon6"     | Salon 6 <br /><small>(level 3)</small>
 ! class="time" | {{TNT|name-timeofday}}
 |- style="vertical-align: top;"
 ! Session 3: 16:00-17:00
@@ -269,9 +283,10 @@
 | class="header" rowspan="1" | '''s18: Community conferences''' 
 | class="header" rowspan="1" | '''s19: New Voices''' 
 | class="header" rowspan="1" | '''s20: GLAM''' 
-| class="header"     rowspan="1" | '''w5: Workshop: SPARQL'''
+| class="header" rowspan="1" | '''w5: Workshop: SPARQL'''
 |class ="header" rowspan="1" |  '''w6: Workshop: editing tools''' (French) 
 |class ="header" rowspan="1" |  Open for breakout sessions 
+|class ="header" rowspan="1" |'''Wikimedia Movement Strategy Space'''
 ! Session 3: 16:00-17:00
 
 |- style="vertical-align: top;"
@@ -286,6 +301,7 @@
 | class="workshop"     rowspan="4" | [[Submissions/SPARQL – a gentle introduction to the Wikidata Query Service|SPARQL – a gentle introduction to the Wikidata Query Service]]
 |class ="workshop" rowspan="4" |  [[Submissions/Utilisation avancée de l'éditeur visuel|Utilisation avancée de l'éditeur visuel]]
 |class ="unconference" rowspan="2" |  [[Submissions/Commons categorizer meetup 2017|Commons categorizer meetup 2017]]
+| rowspan="4" |
 ! 16:00
 
 |- style="vertical-align: top;"
@@ -312,12 +328,12 @@
 
 |- style="vertical-align: top;"
 ! 17:00
-| class="logistics" colspan="10" | {{TNT|event-break}}
+| colspan="11" class="logistics" | {{TNT|event-break}}
 ! 17:00
 
 |- style="vertical-align: top;"
 ! 17:15
-| class="keynote" rowspan="3" colspan="10" | '''[[Keynotes|Katherine Maher & Christophe Henner]]''' <br/> '''''Wikimedia 2030''''' <br/> <small>'''Ballroom West + Center (level 4)'''</small>
+| colspan="11" rowspan="4" class="keynote" | '''[[Keynotes|Katherine Maher & Christophe Henner]]''' <br/> '''''Wikimedia 2030''''' <br/> <small>'''Ballroom West + Center (level 4)'''</small>
 ! 17:15
 
 |- style="vertical-align: top;"
@@ -330,8 +346,12 @@
 
 |- style="vertical-align: top;"
 ! 18:00
-| class="posters"  rowspan="3" colspan="10" | Happy hour <br/> '''poster session & community village reception''' <br/>(Level 3 (posters) & 4 (community village)) 
 ! 18:00
+
+|- style="vertical-align: top;"
+! 18:15
+| colspan="11" rowspan="3" class="posters" | Happy hour <br/> '''[[Poster session]] & community village reception''' <br/>(Level 3 (posters) & 4 (community village)) 
+! 18:15
 
 |-style="vertical-align: top;"
 ! 18:30
@@ -343,7 +363,7 @@
 
 |- style="vertical-align: top;"
 ! 19:30
-| class="unconference" rowspan="4" colspan="10"| {{TNT|event-unconference}} and [[Meetups]]
+| colspan="11" rowspan="4" class="unconference" | {{TNT|event-unconference}} and [[Meetups]]
 ! 19:30
 
 |-style="vertical-align: top;"
@@ -370,6 +390,7 @@
 ! class="room salon7"     | Joyce/Jarry <br/><small>(level A)</small>
 ! class="room salon8"     | Salon 1 <br/><small>(level 2)</small>
 ! class="room salon9"     | Salon 4 <br/><small>(level 2)</small>
+! class="room salon6"     | Salon 6 <br /><small>(level 3)</small>
 ! class="time" | {{TNT|name-timeofday}}
 
 
