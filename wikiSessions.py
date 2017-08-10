@@ -129,6 +129,8 @@ def print_schedule_block():
     """
     this is a test of the data structure
     """
+    for block in schedule_block_info:
+        print block
     return
 
 def testSchedule():
