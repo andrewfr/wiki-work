@@ -59,15 +59,25 @@ def get_programme(url):
     for line in program:
         print line
         
-def test_patterns():
-    program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
+def get_program():
+    programs = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
-    get_programme(program[0])
+
+
+    programs = {"friday": "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
+                "saturday" : "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
+                "sunday" : "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"}
+
+    if len(sys.argv) != 2:
+        print "usage: python get_program day"
+        sys.exit(0)
+    else:
+        get_programme(programs[sys.argv[1].lower()])
 
 
 def main():
-    test_patterns()
+    get_program()
    
 
 if __name__ == "__main__":
