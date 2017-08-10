@@ -8,6 +8,9 @@ time_pattern = re.compile("(\d\d\:\d\d)\-(\d\d\:\d\d)")
 
 schedule_block_info = []
 
+SESSION_ID = 0
+SESSION_NAME = 1
+
 class Event(object):
     def __init__(self, index, start_time):
         self.start_time = start_time
@@ -72,10 +75,6 @@ def generate_schedule_info(wiki):
             block_name, start_time, end_time = get_session_info(result, line)
             sessions = get_them_sessions(schedule_gen)
             block = ScheduleBlock(start_time, end_time, block_name, sessions)
-            print block.block_name
-            print block.start_time
-            print block.end_time
-            print block.sessions
             schedule_block_info.append(block)
     return
 
@@ -93,17 +92,31 @@ def get_schedule_info(event):
         session_id - string
         session_name - string
     """
+    def get_time(event):
+        # a way to abstract the internal event structue
+        # we don't know what events will eventually 
+        # look like. We will override this function
+        return parse(event.start_time)
+
+    def get_index(event):
+        # ditto
+        return event.index
 
     name = ""
     session_id = ""
     session_name = ""
 
-    e = Event(3,"11:00")
+    result = None
+    event_time = get_time(event)
+    index = get_index(event)
 
     for block in schedule_block_info:
-        print block.start_time, block.end_time
-
-    return name, session_id, session_name
+        if event_time >= block.start_time and event_time <= block.end_time:
+            result = (block.block_name, 
+                      block.sessions[index][SESSION_ID],
+                      block.sessions[index][SESSION_NAME])
+            break
+    return result
 
 
 def open_schedule(file_name):
@@ -121,8 +134,10 @@ def print_schedule_block():
 def testSchedule():
     wiki = open_schedule("data/friday.wiki")
     generate_schedule_info(wiki)
-    e = Event(3,"11:00")
-    get_schedule_info(e)
+    e = Event(2,"11:00")
+    print get_schedule_info(e)
+    e = Event(9,"11:30")
+    print get_schedule_info(e)
 
 def main():
     testSchedule()
