@@ -142,14 +142,16 @@ def test_sessions():
     generate_session_info(schedule)
 
     print_session_block()
-    """
-    e = Event(2,"11:00")
-    print get_schedule_info(e)
-    e = Event(9,"11:30")
-    print get_schedule_info(e)
-    e = Event(0,"12:30")
-    print get_schedule_info(e)
-    """
+
+    # should be community bias
+    print get_session_info(parse("11:00"), 2)
+
+    # should be breakout
+    print get_session_info(parse("11:30"), 9)
+
+    #doesn't exist
+    print get_session_info(parse("12:30"), 0)
+
 
 def main():
     test_sessions()
