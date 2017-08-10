@@ -100,7 +100,7 @@ def get_events(program, book_end, start_time_string):
                     else:
                         print event_type, data_result.group(0)
                 else:
-                    print "something weird"
+                    print "*SOMETHING WEIRD", line
     print "----"        
 
 
