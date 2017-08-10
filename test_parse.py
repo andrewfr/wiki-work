@@ -31,9 +31,13 @@ data =  s + "|" + p + "|" + l + "|" + b
 event_pattern = re.compile(events)
 data_pattern = re.compile(data)
 comment_pattern = re.compile(comment)
-#section_pattern = re.compile('\|\- style\="vertical\-align: top\;"')
 section_pattern = re.compile('\|\-')
 
+# we need to hardwire room names for now
+rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West (level 3)", "Drummond Center (level 3)",\
+         "Drummond East (level 3)", "Salon 3 (level 2)", "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)",\
+         "Salon 4 (level 2)", "Salon 6 (level 3)"]
+ 
 def traverse_schedule(schedule):
     for line in schedule:
         yield line
