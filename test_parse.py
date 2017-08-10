@@ -46,7 +46,6 @@ class ProgramEvent(object):
         self.event_type = event_type
         self.start_time = start_time
 
-
 def traverse_schedule(schedule):
     for line in schedule:
         yield line
@@ -55,7 +54,6 @@ def traverse_schedule(schedule):
 def get_url(url):
     response = requests.get(url)
     return response.content
-
 
 def get_schedule(html_doc):
     soup = BeautifulSoup(html_doc,"lxml")
@@ -66,6 +64,9 @@ def get_schedule(html_doc):
 extract program events from the wiki
 """
 def get_events(program, book_end, start_time_string):
+
+    column = 0
+
     start_time = parse(start_time_string)
     for line in program:
         if line == book_end:
@@ -76,10 +77,19 @@ def get_events(program, book_end, start_time_string):
         else:
             event_result = event_pattern.search(line)
             if event_result:
+                """
+                we are ready to add an event
+                """
                 event_type = event_result.group(1) 
                 data_result = data_pattern.search(line)
                 if data_result:
-                    print event_type, data_result.group(0)
+                    if event_type in ["presentation","workshop","unconference"]:
+                        print event_type, data_result.group(0), rooms[column]
+                        column = column + 1
+                    else:
+                        print event_type, data_result.group(0), rooms[column]
+                else:
+                    print "something weird"
     print "----"        
 
 
