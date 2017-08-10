@@ -31,7 +31,8 @@ data =  s + "|" + p + "|" + l + "|" + b
 event_pattern = re.compile(events)
 data_pattern = re.compile(data)
 comment_pattern = re.compile(comment)
-section_pattern = re.compile('\|\- style\="vertical\-align: top\;"')
+#section_pattern = re.compile('\|\- style\="vertical\-align: top\;"')
+section_pattern = re.compile('\|\-')
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -54,7 +55,14 @@ def get_data(line):
 
 
 def get_section(program):
-
+    #we are in a section
+    book_end = program.next()
+    print "this is the book_end", book_end
+    for line in program:
+        if line == book_end:
+            break
+        print "->", line
+    print "---"
     return
 
 def test_patterns():
@@ -78,7 +86,7 @@ def process_programme(url):
 
         section_result = section_pattern.search(line)
         if section_result:
-            print "->", section_result.group(0)
+            get_section(program)
 
         """
         event_result = event_pattern.search(line)
