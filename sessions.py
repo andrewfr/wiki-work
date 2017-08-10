@@ -111,7 +111,7 @@ def get_schedule_info(event):
     index = get_index(event)
 
     for block in schedule_block_info:
-        if event_time >= block.start_time and event_time <= block.end_time:
+        if event_time >= block.start_time and event_time < block.end_time:
             result = (block.block_name, 
                       block.sessions[index][SESSION_ID],
                       block.sessions[index][SESSION_NAME])
@@ -137,6 +137,8 @@ def testSchedule():
     e = Event(2,"11:00")
     print get_schedule_info(e)
     e = Event(9,"11:30")
+    print get_schedule_info(e)
+    e = Event(0,"12:30")
     print get_schedule_info(e)
 
 def main():
