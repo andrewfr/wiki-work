@@ -70,12 +70,16 @@ def get_events(program, book_end, start_time_string):
     for line in program:
         if line == book_end:
             break
-
         comment_result = comment_pattern.search(line)
         if comment_result:
             continue
         else:
-            print line
+            event_result = event_pattern.search(line)
+            if event_result:
+                event_type = event_result.group(1) 
+                data_result = data_pattern.search(line)
+                if data_result:
+                    print event_type, data_result.group(0)
     print "----"        
 
 
