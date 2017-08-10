@@ -62,10 +62,6 @@ def get_schedule(html_doc):
     schedule = soup.find("textarea")
     return schedule.get_text().splitlines()
 
-def get_data(line):
-    columns = line.split("|")
-    return columns[:-1]
-
 """
 extract program events from the wiki
 """
