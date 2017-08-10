@@ -141,6 +141,7 @@ def test_sessions():
 
     generate_session_info(schedule)
 
+    print_session_block()
     """
     e = Event(2,"11:00")
     print get_schedule_info(e)
