@@ -117,14 +117,6 @@ def process_programme(url):
         if section_result:
             get_section(program)
 
-        """
-        event_result = event_pattern.search(line)
-        if event_result:
-            event_type = event_result.group(1) 
-            data_result = data_pattern.search(line)
-            if data_result:
-                print event_type, data_result.group(0)
-        """
         
 
 def main():
