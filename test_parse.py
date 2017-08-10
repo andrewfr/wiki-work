@@ -88,7 +88,11 @@ def get_events(program, book_end, start_time_string):
                 data_result = data_pattern.search(line)
                 if data_result:
                     if event_type in ["presentation","workshop","unconference"]:
-                        print start_time, event_type, data_result.group(0), rooms[column]
+                        print "**", start_time, column
+                        x = get_session_info(start_time, column)
+                        print "**", x, type(x)
+                        print start_time, event_type, data_result.group(0), rooms[column], session_name,\
+                                session_id, session_title
                         column = column + 1
                     else:
                         print event_type, data_result.group(0), rooms[column]
@@ -110,7 +114,9 @@ def get_section(program):
 
 def process_programme(url):
     html_doc = get_url(url)
+
     schedule = get_schedule(html_doc)
+    generate_session_info(schedule)
 
     program = traverse_schedule(schedule)
 
@@ -154,7 +160,7 @@ def test_sessions():
 
 
 def main():
-    test_sessions()
+    test_patterns()
    
 
 if __name__ == "__main__":
