@@ -18,6 +18,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+comment = '^\<\!\-\-(.*)\-\-\>'
 p = "\[\[(.*)\]\]"
 s = "'''(.*)'''"
 events = '^\|.*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"'
@@ -47,6 +48,14 @@ def get_data(line):
 
 
 def test_patterns():
+    program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
+               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
+               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
+    print program
+    sys.exit(0)
+    process_programme(program[0])
+
+def process_programme(url):
     friday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit"
     #saturday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit"
     #sunday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"
@@ -57,8 +66,13 @@ def test_patterns():
 
     event_pattern = re.compile(events)
     data_pattern = re.compile(data)
+    comment_pattern = re.compile(comment)
 
     for line in schedule:
+        comment_result = comment_pattern.search(line)
+        if comment_result:
+            print "->", line
+            continue
         event_result = event_pattern.search(line)
         if event_result:
             event_type = event_result.group(1) 
