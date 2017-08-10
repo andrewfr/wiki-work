@@ -80,12 +80,13 @@ def get_events(program, book_end, start_time_string):
 
 
 def get_section(program):
-    #we are in a section
+    """
+    we are in a wikicode section
+    we don't care about all sections - just activities
+    """
     book_end = program.next()
-    print "this is the book_end", book_end
     talks_result = time_pattern.search(book_end)
     if talks_result:
-        print '*', talks_result.group(1)
         get_events(program, book_end, talks_result.group(1))
     return
 
