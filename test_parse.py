@@ -88,11 +88,13 @@ def get_events(program, book_end, start_time_string):
                 data_result = data_pattern.search(line)
                 if data_result:
                     if event_type in ["presentation","workshop","unconference"]:
-                        print "**", start_time, column
-                        x = get_session_info(start_time, column)
-                        print "**", x, type(x)
-                        print start_time, event_type, data_result.group(0), rooms[column], session_name,\
-                                session_id, session_title
+                        try:
+                            session_name, session_id, session_title = get_session_info(start_time, column)
+                            print start_time, event_type, data_result.group(0), rooms[column], session_name,\
+                                    session_id, session_title
+                        except:
+                            print '->', line
+                            traceback.print_exc()
                         column = column + 1
                     else:
                         print event_type, data_result.group(0), rooms[column]
