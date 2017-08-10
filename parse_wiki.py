@@ -23,7 +23,7 @@ presentation_pattern = re.compile("\[\[(.*)\]\]")
 level_pattern = re.compile("\((.*)\)")
 session_pattern = re.compile("'''(.*)'''")
 #event_pattern = re.compile("presentation|unconference|workshop|keynote|posters|logistics")
-event_pattern = re.compile('^\|\s*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"')
+event_pattern = re.compile('^\|(.*)class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"')
 logistics_pattern = re.compile("\{\{TNT\|(.*)\}\}")
 comment_pattern = re.compile('^\<\!\-\-(.*)\-\-\>')
 breakout_pattern = re.compile("(\w*)([Bb]reakout)(\w*)")
@@ -304,6 +304,7 @@ def get_events(schedule):
             line = schedule.next()
             result = event_pattern.search(line)
             if result:
+                print "event",result.group(1)
                 break
             result = comment_pattern.search(line)
             if result:
@@ -318,9 +319,6 @@ def get_events(schedule):
             
             # now get the rest of the events
             for line in schedule:
-                t = get_time(line)
-                if t == "16:00":
-                    pass
                 #if we see the time again, we are done for that block
                 if get_time(line):
                     break
@@ -355,7 +353,6 @@ def add_rooms(information, presentations):
     i = 0
     modulus = len(information)
     for presentation in presentations:
-        print "->", presentation, information[i % modulus]
         i = i + 1
     return
 
@@ -437,6 +434,11 @@ def test_times():
     #html_doc = get_url("https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit")
     html_doc = get_url(friday)
     schedule = get_schedule(html_doc)
+    """
+    with codecs.open("output", 'wb', encoding="utf-8") as fp:
+        for line in schedule:
+            fp.write(line)
+    """
     events = get_events(schedule)
     for event in events:
         print event
