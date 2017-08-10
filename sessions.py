@@ -93,7 +93,7 @@ def get_schedule_info(event):
         session_name - string
     """
     def get_time(event):
-        # a way to abstract the internal event structue
+        # a way to abstract the internals of an event structure
         # we don't know what events will eventually 
         # look like. We will override this function
         return parse(event.start_time)
