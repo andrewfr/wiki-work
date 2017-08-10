@@ -20,7 +20,7 @@ sys.setdefaultencoding('utf-8')
 
 p = "\[\[(.*)\]\]"
 s = "'''(.*)'''"
-event_pattern = '^\|.*class\s*="presentation|unconference|workshop|keynote|posters|logistics"'
+events = '^\|.*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"'
 l = "\{\{TNT\|(.*)\}\}"
 b = "(\w*[Bb]reakout\w*)"
 
@@ -55,11 +55,18 @@ def test_patterns():
 
     #pattern = re.compile(p)
 
+    event_pattern = re.compile(events)
     data_pattern = re.compile(data)
+
     for line in schedule:
-        result = data_pattern.search(line)
-        if result:
-            print result.group(0) 
+        event_result = event_pattern.search(line)
+        if event_result:
+            event_type = event_result.group(1) 
+            data_result = data_pattern.search(line)
+            if data_result:
+                print event_type, data_result.group(0)
+
+        
 
 def main():
     test_patterns()
