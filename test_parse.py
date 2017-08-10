@@ -67,7 +67,9 @@ def process_programme(url):
     html_doc = get_url(url)
     schedule = get_schedule(html_doc)
 
-    for line in schedule:
+    program = traverse_schedule(schedule)
+
+    for line in program:
 
         # ignore comments
         comment_result = comment_pattern.search(line)
