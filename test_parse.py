@@ -127,7 +127,8 @@ def process_programme(url):
         if section_result:
             get_section(program)
 
-        
+def test_sessions():
+    pass
 
 def main():
     test_patterns()
