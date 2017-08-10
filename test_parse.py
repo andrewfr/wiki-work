@@ -19,19 +19,20 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
+start_time = "^\! (\d\d\:\d\d)"
 comment = '^\<\!\-\-(.*)\-\-\>'
 p = "\[\[(.*)\]\]"
 s = "'''(.*)'''"
 events = '^\|.*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"'
 l = "\{\{TNT\|(.*)\}\}"
 b = "(\w*[Bb]reakout\w*)"
-
 data =  s + "|" + p + "|" + l + "|" + b
 
 event_pattern = re.compile(events)
 data_pattern = re.compile(data)
 comment_pattern = re.compile(comment)
 section_pattern = re.compile('\|\-')
+time_pattern = re.compile(start_time)
 
 # we need to hardwire room names for now
 rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West (level 3)", "Drummond Center (level 3)",\
@@ -65,7 +66,6 @@ def get_section(program):
     for line in program:
         if line == book_end:
             break
-        print "->", line
     print "---"
     return
 
