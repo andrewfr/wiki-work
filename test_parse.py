@@ -18,6 +18,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+
 comment = '^\<\!\-\-(.*)\-\-\>'
 p = "\[\[(.*)\]\]"
 s = "'''(.*)'''"
@@ -26,6 +27,11 @@ l = "\{\{TNT\|(.*)\}\}"
 b = "(\w*[Bb]reakout\w*)"
 
 data =  s + "|" + p + "|" + l + "|" + b
+
+event_pattern = re.compile(events)
+data_pattern = re.compile(data)
+comment_pattern = re.compile(comment)
+section_pattern = re.compile('\|\- style\="vertical\-align: top\;"')
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -47,39 +53,39 @@ def get_data(line):
     return columns[:-1]
 
 
+def get_section(program):
+
+    return
+
 def test_patterns():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
-    print program
-    sys.exit(0)
     process_programme(program[0])
 
 def process_programme(url):
-    friday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit"
-    #saturday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit"
-    #sunday="https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"
-    html_doc = get_url(friday)
+    html_doc = get_url(url)
     schedule = get_schedule(html_doc)
 
-    #pattern = re.compile(p)
-
-    event_pattern = re.compile(events)
-    data_pattern = re.compile(data)
-    comment_pattern = re.compile(comment)
-
     for line in schedule:
+
+        # ignore comments
         comment_result = comment_pattern.search(line)
         if comment_result:
-            print "->", line
             continue
+
+        section_result = section_pattern.search(line)
+        if section_result:
+            print "->", section_result.group(0)
+
+        """
         event_result = event_pattern.search(line)
         if event_result:
             event_type = event_result.group(1) 
             data_result = data_pattern.search(line)
             if data_result:
                 print event_type, data_result.group(0)
-
+        """
         
 
 def main():
