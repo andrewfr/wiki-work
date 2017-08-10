@@ -88,7 +88,7 @@ def get_events(program, book_end, start_time_string):
                 data_result = data_pattern.search(line)
                 if data_result:
                     if event_type in ["presentation","workshop","unconference"]:
-                        print event_type, data_result.group(0), rooms[column]
+                        print start_time, event_type, data_result.group(0), rooms[column]
                         column = column + 1
                     else:
                         print event_type, data_result.group(0), rooms[column]
@@ -108,12 +108,6 @@ def get_section(program):
         get_events(program, book_end, talks_result.group(1))
     return
 
-def test_patterns():
-    program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
-               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
-               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
-    process_programme(program[0])
-
 def process_programme(url):
     html_doc = get_url(url)
     schedule = get_schedule(html_doc)
@@ -130,6 +124,12 @@ def process_programme(url):
         section_result = section_pattern.search(line)
         if section_result:
             get_section(program)
+
+def test_patterns():
+    program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
+               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
+               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
+    process_programme(program[0])
 
 def test_sessions():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
