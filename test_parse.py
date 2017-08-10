@@ -92,7 +92,7 @@ def get_events(program, book_end, start_time_string):
                             #session_name, session_id, session_title = get_session_info(start_time, column)
                             #print start_time, event_type, data_result.group(0), rooms[column], session_name,\
                             #        session_id, session_title
-                            print event_type, data_result.group(1), line
+                            print event_type, "->", line
                         except:
                             print '->', line
                             traceback.print_exc()
