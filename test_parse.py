@@ -39,9 +39,12 @@ rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West 
          "Drummond East (level 3)", "Salon 3 (level 2)", "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)",\
          "Salon 4 (level 2)", "Salon 6 (level 3)"]
 
+program_events = []
+
 class ProgramEvent(object):
-    def __init__(self,  event_type):
+    def __init__(self,  event_type, start_time):
         self.event_type = event_type
+        self.start_time = start_time
 
 
 def traverse_schedule(schedule):
@@ -63,6 +66,18 @@ def get_data(line):
     columns = line.split("|")
     return columns[:-1]
 
+"""
+extract program events from the wiki
+"""
+def get_events(program, book_end, start_time_string):
+    start_time = parse(start_time_string)
+    for line in program:
+        if line == book_end:
+            break
+        else:
+            print line
+    print "----"        
+
 
 def get_section(program):
     #we are in a section
@@ -70,11 +85,8 @@ def get_section(program):
     print "this is the book_end", book_end
     talks_result = time_pattern.search(book_end)
     if talks_result:
-        print talks_result.group(1)
-    for line in program:
-        if line == book_end:
-            break
-    print "---"
+        print '*', talks_result.group(1)
+        get_events(program, book_end, talks_result.group(1))
     return
 
 def test_patterns():
