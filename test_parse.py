@@ -38,7 +38,12 @@ time_pattern = re.compile(start_time)
 rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West (level 3)", "Drummond Center (level 3)",\
          "Drummond East (level 3)", "Salon 3 (level 2)", "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)",\
          "Salon 4 (level 2)", "Salon 6 (level 3)"]
- 
+
+class ProgramEvent(object):
+    def __init__(self,  event_type):
+        self.event_type = event_type
+
+
 def traverse_schedule(schedule):
     for line in schedule:
         yield line
@@ -63,6 +68,9 @@ def get_section(program):
     #we are in a section
     book_end = program.next()
     print "this is the book_end", book_end
+    talks_result = time_pattern.search(book_end)
+    if talks_result:
+        print talks_result.group(1)
     for line in program:
         if line == book_end:
             break
