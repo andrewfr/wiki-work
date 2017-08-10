@@ -79,7 +79,7 @@ def generate_session_info(wiki):
     return
 
 
-def get_schedule_info(event):
+def get_session_info(event):
     """
     get schedule information associated with event
 
