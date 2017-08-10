@@ -12,6 +12,8 @@ import csv
 from bs4 import BeautifulSoup
 
 from wikiSessions import generate_session_info, get_session_info
+from wikiSessions import get_session_info
+from wikiSessions import print_session_block
 
 from extract import get_submission_wikicode_link
 from extract import get_submission_wikicode
@@ -130,10 +132,26 @@ def process_programme(url):
             get_section(program)
 
 def test_sessions():
-    pass
+    program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
+               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
+               "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
+
+    html_doc = get_url(program[0])
+    schedule = get_schedule(html_doc)
+
+    generate_session_info(schedule)
+
+    """
+    e = Event(2,"11:00")
+    print get_schedule_info(e)
+    e = Event(9,"11:30")
+    print get_schedule_info(e)
+    e = Event(0,"12:30")
+    print get_schedule_info(e)
+    """
 
 def main():
-    test_patterns()
+    test_sessions()
    
 
 if __name__ == "__main__":
