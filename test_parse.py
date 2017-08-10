@@ -11,6 +11,8 @@ import csv
 
 from bs4 import BeautifulSoup
 
+from wikiSessions import generate_session_info, get_session_info
+
 from extract import get_submission_wikicode_link
 from extract import get_submission_wikicode
 
