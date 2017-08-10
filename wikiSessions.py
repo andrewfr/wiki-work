@@ -31,7 +31,7 @@ def traverse_schedule(schedule):
         yield line
     raise StopIteration()
 
-def get_session_info(session, line):
+def get_session(session, line):
     block_name = None
     start_time = ""
     end_time = ""
@@ -42,7 +42,7 @@ def get_session_info(session, line):
         end_time = the_times.group(2)
     return block_name, start_time, end_time
     
-def generate_schedule_info(wiki):
+def generate_session_info(wiki):
     """
     args
        wiki: list of strings representing the wiki schedule
@@ -72,7 +72,7 @@ def generate_schedule_info(wiki):
     for line in schedule_gen:
         result = session_pattern.search(line)
         if result:
-            block_name, start_time, end_time = get_session_info(result, line)
+            block_name, start_time, end_time = get_session(result, line)
             sessions = get_them_sessions(schedule_gen)
             block = ScheduleBlock(start_time, end_time, block_name, sessions)
             schedule_block_info.append(block)
@@ -133,7 +133,7 @@ def print_schedule_block():
 
 def testSchedule():
     wiki = open_schedule("data/friday.wiki")
-    generate_schedule_info(wiki)
+    generate_session_info(wiki)
     e = Event(2,"11:00")
     print get_schedule_info(e)
     e = Event(9,"11:30")
