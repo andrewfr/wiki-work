@@ -178,11 +178,11 @@ def get_events(program, book_end, start_time_string):
                 if event_type in ["presentation","workshop","unconference"]:
                     try:
                         details = get_details(event_type, line)
-                        print "DETAILS:", details
+                        #print "DETAILS:", details
                         if not details:
                             details = ["",""]
                         session_name, session_id, session_title = get_session_info(start_time, column)
-                        print start_time, event_type, rooms[column], session_name,\
+                        print start_time.strftime("%H:%M"), event_type, rooms[column], session_name,\
                                 session_id, session_title, details[TITLE]
                     except:
                         print '->', line
