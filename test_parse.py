@@ -51,15 +51,15 @@ rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West 
          "Drummond East (level 3)", "Salon 3 (level 2)", "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)",\
          "Salon 4 (level 2)", "Salon 6 (level 3)"]
 
-program_events = []
-
 class ProgramEvent(object):
     def __init__(self,  event_type = None, start_time = None):
         self.event_type = event_type
         self.start_time = start_time
 
     def __repr__(self):
-        return '%s %s %s %s %s %s %s' % (self.title, self.start_time, self.room, self.session_name, self.session_id, self.session_title, self.link) 
+        return '%s %s %s %s %s %s %s' %\
+               (self.title, self.start_time, self.room, self.session_name, 
+                self.session_id, self.session_title, self.link) 
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -210,7 +210,6 @@ def get_events(program, book_end, start_time_string):
                     column = column + 1
                 else:
                     print "SOMETHING ELSE", line
-    print the_events
     print "----"        
     return the_events
 
@@ -222,13 +221,16 @@ def get_section(program):
     book_end = program.next()
     talks_result = time_pattern.search(book_end)
     if talks_result:
-        get_events(program, book_end, talks_result.group(1))
-    return
+       return get_events(program, book_end, talks_result.group(1))
+    # this may be an error
+    return []
 
 def process_programme(url):
-    html_doc = get_url(url)
 
+    program_events = []
+    html_doc = get_url(url)
     schedule = get_schedule(html_doc)
+
     generate_session_info(schedule)
 
     program = traverse_schedule(schedule)
@@ -243,6 +245,8 @@ def process_programme(url):
         section_result = section_pattern.search(line)
         if section_result:
             print get_section(program)
+            
+    return program_events
 
 def test_patterns():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
