@@ -59,7 +59,7 @@ class ProgramEvent(object):
         self.start_time = start_time
 
     def __repr__(self):
-        return (self.title, self.start_time, self.room, self.session_name, self.session_id, self.session_title, self.link) % '%s %s %s %s %s %s %s'
+        return '%s %s %s %s %s %s %s' % (self.title, self.start_time, self.room, self.session_name, self.session_id, self.session_title, self.link) 
 
 def traverse_schedule(schedule):
     for line in schedule:
@@ -210,6 +210,7 @@ def get_events(program, book_end, start_time_string):
                     column = column + 1
                 else:
                     print "SOMETHING ELSE", line
+    print the_events
     print "----"        
     return the_events
 
@@ -241,7 +242,7 @@ def process_programme(url):
 
         section_result = section_pattern.search(line)
         if section_result:
-            get_section(program)
+            print get_section(program)
 
 def test_patterns():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
