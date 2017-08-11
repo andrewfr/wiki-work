@@ -196,6 +196,7 @@ def get_events(program, book_end, start_time_string):
             break
         comment_result = comment_pattern.search(line)
         if comment_result:
+            print line, column
             column = column + 1
             continue
         else:
@@ -220,7 +221,9 @@ def get_events(program, book_end, start_time_string):
                                event_type, rooms[column], session_name,\
                                session_id, session_title, details[TITLE]
                         """
-
+                        #if details[LINK]:
+                        #    link = get_link(details[LINK])
+                       
                         print "TITLE: " , details[TITLE]
                         print "COLUMN: ", column
                         print "ROOM: ", rooms[column]
@@ -296,7 +299,7 @@ def test_patterns():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
-    events = process_programme(program[0])
+    events = process_programme(program[1])
     #make_csv("test.csv", events)
 
 def test_sessions():
