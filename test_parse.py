@@ -252,7 +252,7 @@ def make_csv(file_name, events):
     with codecs.open(file_name, "wb", encoding="utf-8") as fp:
         writer = csv.writer(fp, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         for event in events:
-            row = [event.title, event.start_time, event.room, event.session_name, 
+            row = [event.title, event.start_time.strftime("%H:%M"), event.room, event.session_name, 
                    event.session_id, event.session_title, event.link] 
             writer.writerow(row)
 
