@@ -49,9 +49,16 @@ logistics_pattern = re.compile(l)
 
 
 # we need to hardwire room names for now
-rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West (level 3)", "Drummond Center (level 3)",\
-         "Drummond East (level 3)", "Salon 3 (level 2)", "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)",\
-         "Salon 4 (level 2)", "Salon 6 (level 3)"]
+rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West (level 3)",
+        "Drummond Center (level 3)", "Drummond East (level 3)", "Salon 3 (level 2)", 
+        "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)", "Salon 4 (level 2)",
+        "Salon 6 (level 3)"]
+
+DEBUG = 0
+def debug(message):
+    if DEBUG:
+        print message
+
 
 class ProgramEvent(object):
     def __init__(self,  event_type = None, start_time = None):
@@ -98,7 +105,7 @@ def get_schedule(html_doc):
     return schedule.get_text().splitlines()
 
 def get_presentation_details(line):
-    print "in presentation"
+    debug("in presentation")
     answer = presentation_pattern.search(line)
     if answer:
         data = answer.group(1).split("|")
@@ -119,7 +126,7 @@ def get_keynote_details(line):
     return detail
 
 def get_logistics_details(line):
-    print "*in logistics"
+    debug("*in logistics")
     global logistics_pattern
     answer = logistics_pattern.search(line)
     if answer:
@@ -134,7 +141,7 @@ def get_poster_details(line):
     return get_keynote_details(line)
 
 def get_unconference_details(line):
-    print "* in unconference"
+    debug("* in unconference")
     #check for break out
     #answer = breakout_pattern.search(line)
     #if answer:
@@ -151,7 +158,7 @@ def get_unconference_details(line):
             return line[i + 1:].strip()
 
 def get_workshop_details(line):
-    print "* in workshop"
+    debug("* in workshop")
     answer = get_presentation_details(line)
     if answer:
         return answer
@@ -207,10 +214,15 @@ def get_events(program, book_end, start_time_string):
                         end_time = calculate_ending(start_time, time_span)
                         session_name, session_id, session_title = get_session_info(start_time, column)
 
+                        """ 
                         print start_time.strftime("%H:%M"), end_time.strftime("%H:%M"),\
                                event_type, rooms[column], session_name,\
                                session_id, session_title, details[TITLE]
+                        """
 
+                        print "TITLE: " , details[TITLE]
+                        print "COLUMN: ", column
+                        print "ROOM: ", rooms[column]
                         event = ProgramEvent()
 
                         # start of this is bad 
@@ -229,7 +241,7 @@ def get_events(program, book_end, start_time_string):
                         traceback.print_exc()
                     column = column + 1
                 else:
-                    print "SOMETHING ELSE", line
+                    debug("SOMETHING ELSE " + line)
     print "----"        
     return the_events
 
