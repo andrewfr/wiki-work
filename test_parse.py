@@ -65,8 +65,8 @@ def get_schedule(html_doc):
     return schedule.get_text().splitlines()
 
 
-def get_details(event_type, line):
-    print "GET DETAILS", event_type, line
+def get_details(event_type, data, line):
+    print "GET DETAILS", event_type, data
     return
 
 
@@ -98,7 +98,7 @@ def get_events(program, book_end, start_time_string):
                             #session_name, session_id, session_title = get_session_info(start_time, column)
                             #print start_time, event_type, data_result.group(0), rooms[column], session_name,\
                             #        session_id, session_title
-                            get_details(event_type, line)
+                            get_details(event_type, data_result.group(1), line)
                         except:
                             print '->', line
                             traceback.print_exc()
