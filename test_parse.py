@@ -38,6 +38,11 @@ comment_pattern = re.compile(comment)
 section_pattern = re.compile('\|\-')
 time_pattern = re.compile(start_time)
 
+# more patterns
+presentation_pattern = re.compile(p)
+logistics_pattern = re.compile(l)
+
+
 # we need to hardwire room names for now
 rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West (level 3)", "Drummond Center (level 3)",\
          "Drummond East (level 3)", "Salon 3 (level 2)", "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)",\
