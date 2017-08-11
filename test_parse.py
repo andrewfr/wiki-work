@@ -244,7 +244,7 @@ def process_programme(url):
 
         section_result = section_pattern.search(line)
         if section_result:
-            print get_section(program)
+            program_events = program_events + get_section(program)
             
     return program_events
 
@@ -252,7 +252,7 @@ def test_patterns():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
-    process_programme(program[0])
+    print process_programme(program[0])
 
 def test_sessions():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
