@@ -70,6 +70,7 @@ def get_schedule(html_doc):
     return schedule.get_text().splitlines()
 
 def get_presentation_details(line):
+    print "in presentation"
     answer = presentation_pattern.search(line)
     if answer:
         data = answer.group(1).split("|")
@@ -90,6 +91,7 @@ def get_keynote_details(line):
     return detail
 
 def get_logistics_details(line):
+    print "*in logistics"
     global logistics_pattern
     answer = logistics_pattern.search(line)
     if answer:
@@ -104,6 +106,7 @@ def get_poster_details(line):
     return get_keynote_details(line)
 
 def get_unconference_details(line):
+    print "* in unconference"
     #check for break out
     #answer = breakout_pattern.search(line)
     #if answer:
@@ -120,6 +123,7 @@ def get_unconference_details(line):
             return line[i + 1:].strip()
 
 def get_workshop_details(line):
+    print "* in workshop"
     answer = get_presentation_details(line)
     if answer:
         return answer
