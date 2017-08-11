@@ -58,6 +58,9 @@ class ProgramEvent(object):
         self.event_type = event_type
         self.start_time = start_time
 
+    def __repr__(self):
+        return (self.title, self.start_time, self.room, self.session_name, self.session_id, self.session_title, self.link) % '%s %s %s %s %s %s %s'
+
 def traverse_schedule(schedule):
     for line in schedule:
         yield line
@@ -159,6 +162,8 @@ extract program events from the wiki
 """
 def get_events(program, book_end, start_time_string):
 
+    the_events = []
+
     column = 0
 
     start_time = parse(start_time_string)
@@ -180,10 +185,25 @@ def get_events(program, book_end, start_time_string):
                         details = get_details(event_type, line)
                         if not details:
                             details = ["",""]
+
                         session_name, session_id, session_title = get_session_info(start_time, column)
+
                         print start_time.strftime("%H:%M"), event_type, rooms[column], session_name,\
                                 session_id, session_title, details[TITLE]
-                         
+
+                        event = ProgramEvent()
+
+                        # start of this is bad 
+                        event.session_name = session_name
+                        event.session_id = session_id
+                        event.session_title = session_title
+                        event.start_time = start_time
+                        event.room = rooms[column]
+                        event.title = details[TITLE]
+                        event.link = details[LINK]
+                        # end of this is bad
+
+                        the_events.append(event)
                     except:
                         print '->', line
                         traceback.print_exc()
@@ -191,7 +211,7 @@ def get_events(program, book_end, start_time_string):
                 else:
                     print "SOMETHING ELSE", line
     print "----"        
-
+    return the_events
 
 def get_section(program):
     """
