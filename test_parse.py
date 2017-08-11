@@ -30,7 +30,8 @@ start_time = "^\! (\d\d\:\d\d)"
 comment = '^\<\!\-\-(.*)\-\-\>'
 p = "\[\[(.*)\]\]"
 s = "'''(.*)'''"
-events = '^\|.*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"'
+#events = '^\|.*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"'
+events = '.*class\s*="(presentation|unconference|workshop|keynote|posters|logistics)"'
 l = "\{\{TNT\|(.*)\}\}"
 b = "(\w*[Bb]reakout\w*)"
 data =  s + "|" + p + "|" + l + "|" + b
@@ -261,7 +262,7 @@ def test_patterns():
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
     events = process_programme(program[0])
-    make_csv("test.csv", events)
+    #make_csv("test.csv", events)
 
 def test_sessions():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
