@@ -64,6 +64,12 @@ def get_schedule(html_doc):
     schedule = soup.find("textarea")
     return schedule.get_text().splitlines()
 
+
+def get_details(event_type, line):
+    print "GET DETAILS", event_type, line
+    return
+
+
 """
 extract program events from the wiki
 """
@@ -92,7 +98,7 @@ def get_events(program, book_end, start_time_string):
                             #session_name, session_id, session_title = get_session_info(start_time, column)
                             #print start_time, event_type, data_result.group(0), rooms[column], session_name,\
                             #        session_id, session_title
-                            print event_type, "->", line
+                            get_details(event_type, line)
                         except:
                             print '->', line
                             traceback.print_exc()
