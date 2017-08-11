@@ -62,6 +62,18 @@ class ProgramEvent(object):
                (self.title, self.start_time, self.room, self.session_name, 
                 self.session_id, self.session_title, self.link) 
 
+
+def get_time_span(line):
+    small_block = 15
+    big_block = 30
+    block = small_block
+
+    time_span = time_span_pattern.search(line)
+    if time_span:
+        return int(time_span.group(1)) * block 
+    else:
+        return 1 * block
+
 def traverse_schedule(schedule):
     for line in schedule:
         yield line
