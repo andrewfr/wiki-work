@@ -66,8 +66,18 @@ def get_schedule(html_doc):
 
 
 def get_details(event_type, line):
+    details = None
     print "GET DETAILS", event_type, line
-    return
+    if event_type == "presentation":
+        details = get_presentation_details(line)
+    elif event_type == "workshop":
+        details = get_workshop_details(line)
+    elif event_type == "unconference":
+        details = get_unconference_details(line)
+    else:
+        print "some weird detail stuff"
+        details = line
+    return details
 
 
 """
