@@ -248,11 +248,20 @@ def process_programme(url):
             
     return program_events
 
+def make_csv(file_name, events):
+    with codecs.open(file_name, "wb", encoding="utf-8") as fp:
+        writer = csv.writer(fp, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+        for event in events:
+            row = [event.title, event.start_time, event.room, event.session_name, 
+                   event.session_id, event.session_title, event.link] 
+            writer.writerow(row)
+
 def test_patterns():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
-    print process_programme(program[0])
+    events = process_programme(program[0])
+    make_csv("test.csv", events)
 
 def test_sessions():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
