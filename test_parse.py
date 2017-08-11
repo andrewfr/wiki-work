@@ -64,6 +64,65 @@ def get_schedule(html_doc):
     schedule = soup.find("textarea")
     return schedule.get_text().splitlines()
 
+def get_presentation_details(line):
+    answer = presentation_pattern.search(line)
+    if answer:
+        data = answer.group(1).split("|")
+        if len(data) == 1:
+            data = [data[0],data[0]]
+        return data
+    else:
+        return None
+
+def get_keynote_details(line):
+    detail = None
+    i = line.find("|", 1)
+    if i != -1:
+        detail = line[i + 1:]
+        detail = detail.replace("<br/>","")
+        detail = detail.replace("<small>","")
+        detail = detail.replace("</small>","")
+    return detail
+
+def get_logistics_details(line):
+    global logistics_pattern
+    answer = logistics_pattern.search(line)
+    if answer:
+        return answer.group(1)
+    answer = get_presentation_details(line)
+    if answer:
+       return answer
+    else:
+        return None
+
+def get_poster_details(line):
+    return get_keynote_details(line)
+
+def get_unconference_details(line):
+    #check for break out
+    #answer = breakout_pattern.search(line)
+    #if answer:
+    #    return answer.group(0)
+    details = get_presentation_details(line)
+    if details:
+        return details
+    details = get_logistics_details(line)
+    if details:
+        return details
+    else:
+        i = line.find("|",5)
+        if i != -1:
+            return line[i + 1:].strip()
+
+def get_workshop_details(line):
+    answer = get_presentation_details(line)
+    if answer:
+        return answer
+    answer = get_logistics_details(line)
+    if answer:
+        return answer
+    return None
+
 
 def get_details(event_type, line):
     details = None
@@ -78,7 +137,6 @@ def get_details(event_type, line):
         print "some weird detail stuff"
         details = line
     return details
-
 
 """
 extract program events from the wiki
