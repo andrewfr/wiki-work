@@ -41,6 +41,7 @@ data_pattern = re.compile(data)
 comment_pattern = re.compile(comment)
 section_pattern = re.compile('\|\-')
 time_pattern = re.compile(start_time)
+time_span_pattern = re.compile('rowspan="(\d+)"')
 
 # more patterns
 presentation_pattern = re.compile(p)
@@ -199,10 +200,12 @@ def get_events(program, book_end, start_time_string):
                         if not details:
                             details = ["",""]
 
+                        end_time = get_time_span(line)
                         session_name, session_id, session_title = get_session_info(start_time, column)
 
-                        print start_time.strftime("%H:%M"), event_type, rooms[column], session_name,\
-                                session_id, session_title, details[TITLE]
+                        print start_time.strftime("%H:%M"), end_time.strftime("%H%M"),\
+                               event_type, rooms[column], session_name,\
+                               session_id, session_title, details[TITLE]
 
                         event = ProgramEvent()
 
