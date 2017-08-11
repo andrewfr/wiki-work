@@ -63,6 +63,9 @@ class ProgramEvent(object):
                (self.title, self.start_time, self.room, self.session_name, 
                 self.session_id, self.session_title, self.link) 
 
+def calculate_ending(the_time, time_span):
+    end_time = the_time + timedelta(minutes=time_span)
+    return end_time
 
 def get_time_span(line):
     small_block = 15
@@ -200,10 +203,11 @@ def get_events(program, book_end, start_time_string):
                         if not details:
                             details = ["",""]
 
-                        end_time = get_time_span(line)
+                        time_span = get_time_span(line)
+                        end_time = calculate_ending(start_time, time_span)
                         session_name, session_id, session_title = get_session_info(start_time, column)
 
-                        print start_time.strftime("%H:%M"), end_time.strftime("%H%M"),\
+                        print start_time.strftime("%H:%M"), end_time.strftime("%H:%M"),\
                                event_type, rooms[column], session_name,\
                                session_id, session_title, details[TITLE]
 
