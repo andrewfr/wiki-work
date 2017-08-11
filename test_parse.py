@@ -54,10 +54,10 @@ rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West 
         "Salon 5 (level 2)", "Joyce/Jarry (level A)", "Salon 1 (level 2)", "Salon 4 (level 2)",
         "Salon 6 (level 3)"]
 
-DEBUG = 0
+DEBUG = 0 
 def debug(message):
     if DEBUG:
-        print message
+        print '->', message
 
 
 class ProgramEvent(object):
@@ -214,6 +214,7 @@ def get_events(program, book_end, start_time_string):
 
                         time_span = get_time_span(line)
                         end_time = calculate_ending(start_time, time_span)
+                        print "[", event_type, line, "]"
                         session_name, session_id, session_title = get_session_info(start_time, column)
 
                         """ 
@@ -237,6 +238,7 @@ def get_events(program, book_end, start_time_string):
                         event.session_id = session_id
                         event.session_title = session_title
                         event.start_time = start_time
+                        event.end_time = end_time
                         event.room = rooms[column]
                         event.title = details[TITLE]
                         event.link = details[LINK]
@@ -291,7 +293,8 @@ def make_csv(file_name, events):
     with codecs.open(file_name, "wb", encoding="utf-8") as fp:
         writer = csv.writer(fp, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         for event in events:
-            row = [event.title, event.start_time.strftime("%H:%M"), event.room, event.session_name, 
+            row = [event.title, event.start_time.strftime("%H:%M"),
+                    event.end_time.strftime("%H:%M"), event.room, event.session_name, 
                    event.session_id, event.session_title, event.link] 
             writer.writerow(row)
 
@@ -299,8 +302,8 @@ def test_patterns():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
                "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"]
-    events = process_programme(program[1])
-    #make_csv("test.csv", events)
+    events = process_programme(program[2])
+    make_csv("sunday.csv", events)
 
 def test_sessions():
     program = ["https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
