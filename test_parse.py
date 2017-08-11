@@ -64,6 +64,11 @@ def get_url(url):
     response = requests.get(url)
     return response.content
 
+def get_link(prefix, url):
+    link = url
+    link = link.replace(" ","_")
+    return prefix + quote(link.encode('utf-8'))
+
 def get_schedule(html_doc):
     soup = BeautifulSoup(html_doc,"lxml")
     schedule = soup.find("textarea")
