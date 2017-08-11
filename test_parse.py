@@ -131,7 +131,6 @@ def get_workshop_details(line):
 
 def get_details(event_type, line):
     details = None
-    print "GET DETAILS", event_type, line
     if event_type == "presentation":
         details = get_presentation_details(line)
     elif event_type == "workshop":
@@ -169,7 +168,7 @@ def get_events(program, book_end, start_time_string):
                         #session_name, session_id, session_title = get_session_info(start_time, column)
                         #print start_time, event_type, data_result.group(0), rooms[column], session_name,\
                         #        session_id, session_title
-                        get_details(event_type, line)
+                        print "DETAILS:", get_details(event_type, line)
                     except:
                         print '->', line
                         traceback.print_exc()
