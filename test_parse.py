@@ -22,6 +22,9 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+# for getting link/title info
+LINK = 0 
+TITLE = 1
 
 start_time = "^\! (\d\d\:\d\d)"
 comment = '^\<\!\-\-(.*)\-\-\>'
@@ -174,10 +177,13 @@ def get_events(program, book_end, start_time_string):
                 event_type = event_result.group(1) 
                 if event_type in ["presentation","workshop","unconference"]:
                     try:
-                        print "DETAILS:", get_details(event_type, line)
+                        details = get_details(event_type, line)
+                        print "DETAILS:", details
+                        if not details:
+                            details = ["",""]
                         session_name, session_id, session_title = get_session_info(start_time, column)
                         print start_time, event_type, rooms[column], session_name,\
-                                session_id, session_title
+                                session_id, session_title, details[TITLE]
                     except:
                         print '->', line
                         traceback.print_exc()
