@@ -54,7 +54,7 @@ rooms = ["Ballroom West (level 4)", "Ballroom Center (level 4)", "Drummond West 
 program_events = []
 
 class ProgramEvent(object):
-    def __init__(self,  event_type, start_time):
+    def __init__(self,  event_type = None, start_time = None):
         self.event_type = event_type
         self.start_time = start_time
 
@@ -178,12 +178,12 @@ def get_events(program, book_end, start_time_string):
                 if event_type in ["presentation","workshop","unconference"]:
                     try:
                         details = get_details(event_type, line)
-                        #print "DETAILS:", details
                         if not details:
                             details = ["",""]
                         session_name, session_id, session_title = get_session_info(start_time, column)
                         print start_time.strftime("%H:%M"), event_type, rooms[column], session_name,\
                                 session_id, session_title, details[TITLE]
+                         
                     except:
                         print '->', line
                         traceback.print_exc()
