@@ -196,6 +196,7 @@ def get_events(program, book_end, start_time_string):
             break
         comment_result = comment_pattern.search(line)
         if comment_result:
+            column = column + 1
             continue
         else:
             event_result = event_pattern.search(line)
@@ -223,6 +224,9 @@ def get_events(program, book_end, start_time_string):
                         print "TITLE: " , details[TITLE]
                         print "COLUMN: ", column
                         print "ROOM: ", rooms[column]
+                        print "SESSION: ", session_title
+                        print "LINK: ", details[LINK]
+                        print ""
                         event = ProgramEvent()
 
                         # start of this is bad 
