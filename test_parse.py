@@ -328,7 +328,17 @@ def test_sessions():
 
 
 def main():
-    test_patterns()
+    program = {"friday": "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Friday&action=edit",
+               "saturday" : "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Saturday&action=edit",
+               "sunday" : "https://wikimania2017.wikimedia.org/w/index.php?title=Programme/Sunday&action=edit"}
+
+    print sys.argv
+    if (len(sys.argv) != 3):
+        print "usage: python test_parse.py day csv_file_name"
+        sys.exit(1)
+
+    events = process_programme(program[sys.argv[1].lower()])
+    make_csv(sys.argv[2], events)
    
 
 if __name__ == "__main__":
